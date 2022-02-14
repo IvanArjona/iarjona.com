@@ -8,10 +8,12 @@ export default function ThemeSwitch() {
 
   return (
     <button
-      className="text-blue-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 rounded-lg p-2"
+      type="button"
+      className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition duration-300"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
-      <Icon className="h-5 w-5" />
+      <span className="sr-only">Change theme</span>
+      <Icon className="h-6 w-6" aria-hidden="true" />
     </button>
   );
 }
