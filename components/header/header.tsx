@@ -13,7 +13,7 @@ export default function Header() {
   ));
 
   return (
-    <header className="h-16">
+    <header>
       <div className="bg-white/80 dark:bg-gray-800/80 shadow-md fixed w-full">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <div className="relative flex items-center justify-between h-16">

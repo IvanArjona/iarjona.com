@@ -1,5 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import FullPage from '../components/full-page'
+import Presentation from '../components/presentation'
 
 const Home: NextPage = () => {
   return (
@@ -8,7 +10,10 @@ const Home: NextPage = () => {
         <title>Home</title>
         <meta name="description" content="Description" />
       </Head>
-      <h1>Home</h1>
+      <FullPage>
+        <Presentation />
+      </FullPage>
+      <h1 id="home">Home</h1>
     </>
   )
 }
