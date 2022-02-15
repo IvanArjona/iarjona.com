@@ -10,7 +10,7 @@ const Home: NextPage = () => {
         <title>Home</title>
         <meta name="description" content="Description" />
       </Head>
-      <FullPage>
+      <FullPage nextSection="home">
         <Presentation />
       </FullPage>
       <h1 id="home">Home</h1>
