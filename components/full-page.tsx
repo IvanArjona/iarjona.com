@@ -1,7 +1,6 @@
 import { ChevronDownIcon } from '@heroicons/react/outline'
 import Link from 'next/link';
 
-
 function nextSectionLink(nextSection?: string) {
   if (!nextSection)
     return;
@@ -13,7 +12,6 @@ function nextSectionLink(nextSection?: string) {
     </Link>
   );
 }
-
 
 export default function FullPage({ nextSection, children }: { nextSection?: string, children: React.ReactNode }) {
   return (

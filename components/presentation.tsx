@@ -12,7 +12,7 @@ const welcomeMessage = [
 
 export default function Presentation() {
   const welcome = welcomeMessage.map(({ text, className }) => (
-    <span className={className} key="text">
+    <span className={className} key={text}>
       {text}
     </span>
   ));

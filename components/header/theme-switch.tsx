@@ -1,10 +1,18 @@
 import { useTheme } from 'next-themes'
 import { SunIcon } from '@heroicons/react/outline'
 import { MoonIcon } from '@heroicons/react/outline'
+import { useEffect, useState } from 'react';
 
 export default function ThemeSwitch() {
+  const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme();
   const Icon = theme === 'dark' ? MoonIcon : SunIcon;
+
+  useEffect(() => setMounted(true), [])
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <button
