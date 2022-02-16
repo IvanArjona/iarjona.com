@@ -7,7 +7,6 @@ export default function MyDocument(props: DocumentProps) {
       <body className="bg-orange-500 dark:bg-black scroll-smooth transition-colors duration-500">
         <Main />
         <NextScript />
-        <div id="modal-root"></div>
       </body>
     </Html>
   )

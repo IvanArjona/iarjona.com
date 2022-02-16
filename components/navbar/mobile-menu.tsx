@@ -1,22 +1,10 @@
-import { useEffect, useState } from 'react';
-import ReactDOM from "react-dom";
 import { XIcon } from '@heroicons/react/outline'
 import MobileMenuItem from './mobile-menu-item';
 
 export default function MobileMenu({ show, navigation, onClose }: {
   show: boolean, navigation: { name: string, href: string }[], onClose: () => any
 }) {
-  const [isBrowser, setIsBrowser] = useState(false);
-
-  useEffect(() => {
-    setIsBrowser(true);
-  }, []);
-
-  if (!isBrowser) {
-    return null;
-  }
-
-  const content = (
+  return (
     <div className={`fixed top-0 bg-white dark:bg-black h-full w-full p-4 sm:p-6 transition-all delay-150 duration-300 ${show || '-translate-x-full'}`}>
       <div className="bg-purple-500 h-full flex items-center flex-col justify-between">
         <button onClick={onClose} className="p-4 self-end">
@@ -35,12 +23,4 @@ export default function MobileMenu({ show, navigation, onClose }: {
       </div>
     </div>
   );
-
-  if (isBrowser) {
-    return ReactDOM.createPortal(
-      content,
-      document.getElementById('modal-root') as HTMLElement
-    );
-  }
-  return null;
 }
