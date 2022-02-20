@@ -3,16 +3,17 @@ import { MenuIcon } from '@heroicons/react/outline';
 import NavbarItem from './navbar-item';
 import MobileMenu from './mobile-menu';
 import { useState } from 'react';
+import { INavigation } from '../../types';
 
 const navigation = [
   { name: 'About', href: '#home' },
   { name: 'Experience', href: '#' },
   { name: 'Projects', href: '#' },
-  { name: 'Contact', href: '#' },
-]
+  { name: 'Contact', href: '#' }
+] as INavigation;
 
-export default function Navbar() {
-  const [showMenu, setShowMenu] = useState(false);
+const Navbar: React.FC<{}> = () => {
+  const [showMenu, setShowMenu] = useState<boolean>(false);
 
   return (
     <nav>
@@ -56,3 +57,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+export default Navbar

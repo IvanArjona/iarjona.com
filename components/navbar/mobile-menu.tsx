@@ -1,10 +1,15 @@
 import { XIcon } from '@heroicons/react/outline'
-import MobileMenuItem from './mobile-menu-item';
-import MobileMenuSocial from './mobile-menu-social';
-  
-export default function MobileMenu({ show, navigation, onClose }: {
-  show: boolean, navigation: { name: string, href: string }[], onClose: () => any
-}) {
+import MobileMenuItem from './mobile-menu-item'
+import MobileMenuSocial from './mobile-menu-social'
+import { INavigation } from '../../types'
+
+type Props = {
+  show: boolean,
+  navigation: INavigation,
+  onClose: () => any
+}
+
+const MobileMenu: React.FC<Props> = ({ show, navigation, onClose }) => {
   return (
     <div className={`fixed top-0 z-10 h-full w-full flex border-[1rem] border-orange-500 dark:border-black items-center flex-col justify-between from-orange-300 to-orange-100 bg-gradient-to-br dark:from-indigo-800 dark:to-teal-800 transition-all delay-50 duration-700 ${show || 'invisible opacity-0'}`}>
       <button onClick={onClose} className="p-4 self-end">
@@ -19,5 +24,7 @@ export default function MobileMenu({ show, navigation, onClose }: {
       </nav>
       <MobileMenuSocial />
     </div>
-  );
+  )
 }
+
+export default MobileMenu
