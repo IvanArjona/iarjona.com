@@ -4,7 +4,7 @@ export default function MyDocument(props: DocumentProps) {
   return (
     <Html className="scroll-smooth">
       <Head />
-      <body className="bg-orange-500 dark:bg-black scroll-smooth transition-colors duration-500">
+      <body className="bg-orange-500 dark:bg-black transition-colors duration-500">
         <Main />
         <NextScript />
       </body>

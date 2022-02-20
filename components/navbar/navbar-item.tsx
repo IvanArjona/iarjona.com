@@ -4,7 +4,7 @@ export default function NavbarItem({ href, name }: { href: string, name: string 
   return (
     <li>
       <Link href={href}>
-        <a className="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{name}</a>
+        <a className="text-gray-700 dark:text-gray-300 hover:bg-gray-700 hover:text-white dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">{name}</a>
       </Link>
     </li>
   );

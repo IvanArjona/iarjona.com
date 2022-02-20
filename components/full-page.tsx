@@ -15,7 +15,7 @@ function nextSectionButton(nextSection?: string) {
 
 export default function FullPage({ nextSection, children }: { nextSection?: string, children: React.ReactNode }) {
   return (
-    <div className="bg-blue-300 flex justify-center items-center h-screen align-middle">
+    <div className="flex justify-center items-center h-screen align-middle">
       {children}
       {nextSectionButton(nextSection)}
     </div>
