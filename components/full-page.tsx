@@ -1,9 +1,16 @@
-import { ChevronDownIcon } from '@heroicons/react/outline'
+import { ChevronDownIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 
-function nextSectionButton(nextSection?: string) {
-  if (!nextSection)
-    return;
+type Props = {
+  nextSection?: string,
+  children: React.ReactNode
+};
+
+function nextSectionButton(nextSection?: string): JSX.Element | null {
+  if (!nextSection) {
+    return null;
+  }
+
   return (
     <Link href={`#${nextSection}`}>
       <a className="absolute bottom-20 p-10">
@@ -13,11 +20,15 @@ function nextSectionButton(nextSection?: string) {
   );
 }
 
-export default function FullPage({ nextSection, children }: { nextSection?: string, children: React.ReactNode }) {
-  return (
-    <div className="flex justify-center items-center h-screen align-middle">
-      {children}
-      {nextSectionButton(nextSection)}
-    </div>
-  );
-}
+const FullPage: React.FC<Props> = ({ nextSection, children }: Props) => (
+  <div className="flex justify-center items-center h-screen align-middle">
+    {children}
+    {nextSectionButton(nextSection)}
+  </div>
+);
+
+FullPage.defaultProps = {
+  nextSection: undefined,
+};
+
+export default FullPage;

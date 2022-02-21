@@ -1,14 +1,13 @@
-import { useTheme } from 'next-themes'
-import { SunIcon } from '@heroicons/react/outline'
-import { MoonIcon } from '@heroicons/react/outline'
+import { useTheme } from 'next-themes';
+import { SunIcon, MoonIcon } from '@heroicons/react/outline';
 import { useEffect, useState } from 'react';
 
-export default function ThemeSwitch() {
-  const [mounted, setMounted] = useState(false)
+const ThemeSwitch: React.FC<{}> = () => {
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const Icon = theme === 'dark' ? MoonIcon : SunIcon;
 
-  useEffect(() => setMounted(true), [])
+  useEffect(() => setMounted(true), []);
 
   if (!mounted) {
     return null;
@@ -24,4 +23,6 @@ export default function ThemeSwitch() {
       <Icon className="h-6 w-6" aria-hidden="true" />
     </button>
   );
-}
+};
+
+export default ThemeSwitch;

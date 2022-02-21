@@ -1,15 +1,19 @@
 import Head from 'next/head';
 import Navbar from './navbar/navbar';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Navbar />
-      <main>{children}</main>
-      <footer>Footer</footer>
-    </>
-  );
-}
+type Props = {
+  children: React.ReactNode
+};
+
+const Layout: React.FC<Props> = ({ children }: Props) => (
+  <>
+    <Head>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <Navbar />
+    <main>{children}</main>
+    <footer>Footer</footer>
+  </>
+);
+
+export default Layout;

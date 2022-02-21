@@ -1,14 +1,15 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import Layout from '../components/layout';
 import { ThemeProvider } from 'next-themes';
+import Layout from '../components/layout';
 
-export default function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <ThemeProvider attribute="class">
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
-  );
-};
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => (
+  <ThemeProvider attribute="class">
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  </ThemeProvider>
+);
+
+export default MyApp;

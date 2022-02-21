@@ -1,15 +1,15 @@
-import ThemeSwitch from './theme-switch';
 import { MenuIcon } from '@heroicons/react/outline';
+import { useState } from 'react';
+import ThemeSwitch from './theme-switch';
 import NavbarItem from './navbar-item';
 import MobileMenu from './mobile-menu';
-import { useState } from 'react';
 import { INavigation } from '../../types';
 
 const navigation = [
   { name: 'About', href: '#home' },
   { name: 'Experience', href: '#' },
   { name: 'Projects', href: '#' },
-  { name: 'Contact', href: '#' }
+  { name: 'Contact', href: '#' },
 ] as INavigation;
 
 const Navbar: React.FC<{}> = () => {
@@ -22,6 +22,7 @@ const Navbar: React.FC<{}> = () => {
           <div className="relative flex items-center justify-between h-16">
             <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
               <button
+                type="button"
                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 onClick={() => setShowMenu(true)}
               >
@@ -35,7 +36,7 @@ const Navbar: React.FC<{}> = () => {
                 Iván Arjona Alonso
               </div>
             </div>
-            
+
             <div className="absolute inset-y-0 right-0 flex items-center">
               <div className="hidden md:block sm:mr-5">
                 <ul className="flex space-x-4">
@@ -56,6 +57,6 @@ const Navbar: React.FC<{}> = () => {
       />
     </nav>
   );
-}
+};
 
-export default Navbar
+export default Navbar;

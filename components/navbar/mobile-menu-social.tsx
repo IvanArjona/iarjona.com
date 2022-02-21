@@ -1,15 +1,14 @@
-import Image from 'next/image';
-import { MailIcon } from '@heroicons/react/solid'
-import LinkedinIcon from "../../assets/icons/linkedin.svg";
-import GithubIcon from "../../assets/icons/github.svg";
+import { MailIcon } from '@heroicons/react/solid';
+import LinkedinIcon from '../../assets/icons/linkedin.svg';
+import GithubIcon from '../../assets/icons/github.svg';
 
 const socials = [
   { Icon: MailIcon, title: 'Email', href: 'mailto:ivan@iarjona.com' },
   { Icon: GithubIcon, title: 'GitHub', href: 'https://github.com/IvanArjona' },
-  { Icon: LinkedinIcon, title: 'LinkedIn', href: 'https://www.linkedin.com/in/ivan-arjona/' }
+  { Icon: LinkedinIcon, title: 'LinkedIn', href: 'https://www.linkedin.com/in/ivan-arjona/' },
 ];
 
-export default function MobileMenuSocial() {
+const MobileMenuSocial: React.FC<{}> = () => {
   const socialLinks = socials.map(({ Icon, title, href }) => (
     <a href={href} key={href} title={title} target="_blank" rel="noreferrer">
       <Icon className="h-6 w-6 m-2 fill-gray-700 dark:fill-gray-200 hover:fill-blue-500 dark:hover:fill-blue-500 transition-colors duration-300" />
@@ -24,4 +23,6 @@ export default function MobileMenuSocial() {
       </div>
     </div>
   );
-}
+};
+
+export default MobileMenuSocial;

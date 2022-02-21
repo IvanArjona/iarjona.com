@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import FullPage from './full-page';
 
 const welcomeMessage = [
   { text: 'console', className: 'text-purple-500' },
@@ -7,10 +6,10 @@ const welcomeMessage = [
   { text: 'log', className: 'text-green-500' },
   { text: '(' },
   { text: '"Hey!"', className: 'text-yellow-400' },
-  { text: ')' }
-]
+  { text: ')' },
+];
 
-export default function Presentation() {
+const Presentation: React.FC<{}> = () => {
   const welcome = welcomeMessage.map(({ text, className }) => (
     <span className={className} key={text}>
       {text}
@@ -26,12 +25,14 @@ export default function Presentation() {
         My name is Iván
       </p>
       <div className="text-sm text-gray-700 font-semibold font-mono">
-        <Link href="#">
+        <Link href="#contact">
           <a className="px-4 py-1 mr-3 lg:ml-1 inline-block bg-green-200 shadow-green-300/20 shadow-lg border rounded-sm border-green-400  hover:bg-green-300">
-            {"Let's Talk"}
+            Let&apos;s Talk
           </a>
         </Link>
       </div>
     </section>
   );
-}
+};
+
+export default Presentation;
