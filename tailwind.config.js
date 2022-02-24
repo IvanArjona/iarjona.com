@@ -4,7 +4,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'short': { 'raw': '(max-height: 800px)' },
+        'tall': { 'raw': '(min-height: 800px)' }
+      }
+    },
   },
   plugins: [],
   darkMode: 'class',

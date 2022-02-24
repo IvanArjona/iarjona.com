@@ -1,38 +1,28 @@
-import Link from 'next/link';
+import Image from 'next/image';
+import Photo from '../assets/images/photo.jpg';
+import Socials from './socials';
 
-const welcomeMessage = [
-  { text: 'console', className: 'text-purple-500' },
-  { text: '.' },
-  { text: 'log', className: 'text-green-500' },
-  { text: '(' },
-  { text: '"Hey!"', className: 'text-yellow-400' },
-  { text: ')' },
-];
-
-const Presentation: React.FC<{}> = () => {
-  const welcome = welcomeMessage.map(({ text, className }) => (
-    <span className={className} key={text}>
-      {text}
-    </span>
-  ));
-
-  return (
-    <section className="px-5 py-10 lg:py-14 lg:px-10 shadow-2xl bg-white dark:bg-gray-900">
-      <h1 className="font-mono font-black text-2xl md:text-3xl lg:text-5xl">
-        {welcome}
-      </h1>
-      <p className="text-lg md:text-xl lg:text-xl mb-8 font-bold text-gray-500 dark:text-gray-400 ml-1">
-        My name is Iván
-      </p>
-      <div className="text-sm text-gray-700 font-semibold font-mono">
-        <Link href="#contact">
-          <a className="px-4 py-1 mr-3 lg:ml-1 inline-block bg-green-200 shadow-green-300/20 shadow-lg border rounded-sm border-green-400  hover:bg-green-300">
-            Let&apos;s Talk
-          </a>
-        </Link>
+const Presentation: React.FC<{}> = () => (
+  <div className="w-screen grid sm:grid-cols-2 gap-8">
+    <div className="col-start-0 mx-auto">
+      <div className="w-64 xl:w-72 2xl:w-80 shadow-[1rem_-1rem] shadow-purple-500">
+        <Image src={Photo} layout="intrinsic" />
       </div>
+    </div>
+    <section className="-mt-20 sm:mt-auto z-10 sm:order-first sm:row-span-2 w-min mx-auto flex flex-col gap-2 md:gap-4 text-white">
+      <h1 className="uppercase font-bold text-5xl md:text-7xl xl:text-9xl">
+        Iván Arjona
+      </h1>
+      <div>----</div>
+      <h2 className="font-mono md:text-xl lg:text-2xl xl:text-3xl">
+        <span className="block">Full Stack</span>
+        <span className="ml-4">Software Engineer</span>
+      </h2>
     </section>
-  );
-};
+    <div className="">
+      <Socials />
+    </div>
+  </div>
+);
 
 export default Presentation;

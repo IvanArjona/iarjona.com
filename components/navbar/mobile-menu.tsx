@@ -10,7 +10,7 @@ type Props = {
 };
 
 const MobileMenu: React.FC<Props> = ({ show, navigation, onClose }: Props) => (
-  <div className={`fixed top-0 z-10 h-full w-full flex border-[1rem] border-orange-500 dark:border-black items-center flex-col justify-between from-orange-300 to-orange-100 bg-gradient-to-br dark:from-indigo-800 dark:to-teal-800 transition-all delay-50 duration-700 ${show || 'invisible opacity-0'}`}>
+  <div className={`fixed top-0 z-40 h-full w-full flex border-[1rem] border-orange-500 dark:border-black items-center flex-col justify-between from-orange-300 to-orange-100 bg-gradient-to-br dark:from-indigo-800 dark:to-teal-800 transition-all delay-50 duration-700 ${show || 'invisible opacity-0'}`}>
     <button
       type="button"
       onClick={onClose}
