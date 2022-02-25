@@ -9,7 +9,7 @@ const NavbarItem: React.FC<Props> = ({ href, name }: Props) => (
   <li>
     <Link href={href}>
       <a
-        className="text-gray-700 dark:text-gray-300 hover:bg-gray-700 hover:text-white dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+        className="text-gray-100 hover:underline underline-offset-2 decoration-purple-500 tracking-wide px-3 py-2 rounded-md font-medium"
       >
         {name}
       </a>
