@@ -9,6 +9,10 @@ const ThemeSwitch: React.FC<{}> = () => {
 
   useEffect(() => setMounted(true), []);
 
+  const switchTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
+
   if (!mounted) {
     return null;
   }
@@ -16,11 +20,11 @@ const ThemeSwitch: React.FC<{}> = () => {
   return (
     <button
       type="button"
-      className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition duration-300"
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      className="p-4"
+      onClick={switchTheme}
     >
       <span className="sr-only">Change theme</span>
-      <Icon className="h-6 w-6" aria-hidden="true" />
+      <Icon className="h-10 w-10" aria-hidden="true" />
     </button>
   );
 };

@@ -20,17 +20,17 @@ const CollapsibleNavbar: React.FC<Props> = ({ navigation }: Props) => {
 
   return (
     <>
-      <div className="fixed container text-right text-white z-50">
+      <div className="container mx-auto flex justify-between text-white z-50">
         <ThemeSwitch />
         <button
           type="button"
           onClick={swapNavbar}
-          className="p-4 self-end"
+          className="p-4"
         >
           <Icon className="h-12 w-12" aria-hidden="true" />
         </button>
       </div>
-      <div className={`h-screen w-screen fixed z-40 py-20 bg-red-500 ${isOpen ? '' : 'hidden'}`}>
+      <div className={`h-screen w-screen z-40 py-20 bg-red-500 ${isOpen ? '' : 'hidden'}`}>
         <div className="m-4 h-full flex flex-col justify-between">
           <ul className="flex flex-col gap-8">
             {navigation.map((item) => <CollapsibleNavbarItem key={item.name} item={item} />)}

@@ -11,10 +11,10 @@ const navigation = [
 
 const Navbar: React.FC<{}> = () => (
   <>
-    <div className="hidden md:block">
+    <div className="fixed w-screen hidden md:block">
       <FixedNavbar navigation={navigation} />
     </div>
-    <div className="md:hidden">
+    <div className="fixed z-40 w-screen md:hidden">
       <CollapsibleNavbar navigation={navigation} />
     </div>
   </>
