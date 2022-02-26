@@ -1,6 +1,6 @@
 import { INavigation } from '../../types';
 import FixedNavbar from './fixed-navbar';
-import CollapsableNavbar from './collapsable-navbar';
+import CollapsibleNavbar from './collapsible-navbar';
 
 const navigation = [
   { name: 'About', href: '#home' },
@@ -15,7 +15,7 @@ const Navbar: React.FC<{}> = () => (
       <FixedNavbar navigation={navigation} />
     </div>
     <div className="md:hidden">
-      <CollapsableNavbar navigation={navigation} />
+      <CollapsibleNavbar navigation={navigation} />
     </div>
   </>
 );

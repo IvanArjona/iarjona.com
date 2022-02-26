@@ -1,20 +1,20 @@
 import Link from 'next/link';
+import { INavigationItem } from '../../types';
 
 type Props = {
-  href: string,
-  name: string
+  item: INavigationItem
 };
 
-const NavbarItem: React.FC<Props> = ({ href, name }: Props) => (
+const FixedNavbarItem: React.FC<Props> = ({ item }: Props) => (
   <li>
-    <Link href={href}>
+    <Link href={item.href}>
       <a
         className="text-gray-100 hover:underline underline-offset-2 decoration-purple-500 tracking-wide px-3 py-2 rounded-md font-medium"
       >
-        {name}
+        {item.name}
       </a>
     </Link>
   </li>
 );
 
-export default NavbarItem;
+export default FixedNavbarItem;

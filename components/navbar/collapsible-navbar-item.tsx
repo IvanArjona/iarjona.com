@@ -5,7 +5,7 @@ type Props = {
   item: INavigationItem
 };
 
-const CollapsableNavbarItem: React.FC<Props> = ({ item }: Props) => (
+const CollapsibleNavbarItem: React.FC<Props> = ({ item }: Props) => (
   <li>
     <Link href={item.href}>
       <a
@@ -17,4 +17,4 @@ const CollapsableNavbarItem: React.FC<Props> = ({ item }: Props) => (
   </li>
 );
 
-export default CollapsableNavbarItem;
+export default CollapsibleNavbarItem;
