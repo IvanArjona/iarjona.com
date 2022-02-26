@@ -1,6 +1,6 @@
-import Image from 'next/image';
 import Photo from '../assets/images/photo.jpg';
 import Socials from './socials';
+import Image from './image';
 
 const Presentation: React.FC<{}> = () => (
   <div className="w-screen grid sm:grid-cols-2 gap-8">

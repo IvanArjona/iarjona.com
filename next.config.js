@@ -8,6 +8,9 @@ const nextConfig = {
       use: ['@svgr/webpack'],
     })
     return config
+  },
+  images: {
+    loader: 'custom'
   }
 }
 
