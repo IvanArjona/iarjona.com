@@ -1,10 +1,13 @@
 import { useTheme } from 'next-themes';
 import { SunIcon, MoonIcon } from '@heroicons/react/outline';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'next-i18next';
 
 const ThemeSwitch: React.FC<{}> = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+  const { t } = useTranslation('common');
+
   const Icon = theme === 'dark' ? MoonIcon : SunIcon;
 
   useEffect(() => setMounted(true), []);
@@ -20,10 +23,11 @@ const ThemeSwitch: React.FC<{}> = () => {
   return (
     <button
       type="button"
-      className="p-4"
+      className="p-4 text-white"
       onClick={switchTheme}
+      title={t('switch-theme')}
     >
-      <span className="sr-only">Change theme</span>
+      <span className="sr-only">{t('switch-theme')}</span>
       <Icon className="h-10 w-10" aria-hidden="true" />
     </button>
   );
