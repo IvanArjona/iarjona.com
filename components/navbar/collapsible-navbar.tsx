@@ -1,7 +1,7 @@
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import { useState } from 'react';
+import { Disclosure, Transition } from '@headlessui/react';
 import { INavigation } from '../../types';
 import Socials from '../socials';
+import CollapsibleNavbarHamburguer from './collapsible-navbar-hamburger';
 import CollapsibleNavbarItem from './collapsible-navbar-item';
 import ThemeSwitch from './theme-switch';
 
@@ -9,37 +9,37 @@ type Props = {
   navigation: INavigation,
 };
 
-const CollapsibleNavbar: React.FC<Props> = ({ navigation }: Props) => {
-  const [isOpen, isOpenSet] = useState(false);
-
-  const swapNavbar = () => {
-    isOpenSet(!isOpen);
-  };
-
-  const Icon = isOpen ? XIcon : MenuIcon;
-
-  return (
-    <>
-      <div className="container mx-auto flex justify-between text-white z-50">
-        <ThemeSwitch />
-        <button
-          type="button"
-          onClick={swapNavbar}
-          className="p-4"
-        >
-          <Icon className="h-12 w-12" aria-hidden="true" />
-        </button>
-      </div>
-      <div className={`h-screen w-screen z-40 py-20 bg-red-500 ${isOpen ? '' : 'hidden'}`}>
-        <div className="m-4 h-full flex flex-col justify-between">
-          <ul className="flex flex-col gap-8">
-            {navigation.map((item) => <CollapsibleNavbarItem key={item.name} item={item} />)}
-          </ul>
-          <Socials />
+const CollapsibleNavbar: React.FC<Props> = ({ navigation }: Props) => (
+  <Disclosure>
+    {({ open }) => (
+      <>
+        <div className="relative container mx-auto flex justify-between z-10 text-white">
+          {open}
+          <ThemeSwitch />
+          <Disclosure.Button className="p-4">
+            <CollapsibleNavbarHamburguer open={open} />
+          </Disclosure.Button>
         </div>
-      </div>
-    </>
-  );
-};
+        <Transition
+          enter="transition-opacity duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="transition-opacity duration-300"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <Disclosure.Panel className="absolute top-0 h-screen w-screen bg-red-500">
+            <div className="pt-24 p-8 h-full flex flex-col justify-between">
+              <ul className="flex flex-col gap-8">
+                {navigation.map((item) => <CollapsibleNavbarItem key={item.name} item={item} />)}
+              </ul>
+              <Socials />
+            </div>
+          </Disclosure.Panel>
+        </Transition>
+      </>
+    )}
+  </Disclosure>
+);
 
 export default CollapsibleNavbar;

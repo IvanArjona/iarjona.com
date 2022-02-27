@@ -28,7 +28,10 @@ const ThemeSwitch: React.FC<{}> = () => {
       title={t('switch-theme')}
     >
       <span className="sr-only">{t('switch-theme')}</span>
-      <Icon className="h-10 w-10" aria-hidden="true" />
+      <Icon
+        className="h-10 w-10 hover:opacity-80 hover:scale-125 transition ease transform duration-300"
+        aria-hidden="true"
+      />
     </button>
   );
 };
