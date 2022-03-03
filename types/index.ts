@@ -14,3 +14,13 @@ export interface IExperienceItem {
   to?: string,
   logo: string,
 }
+
+export interface ISkillItem {
+  name: string,
+  icon: any
+}
+
+export interface ISkillGroup {
+  title: string
+  skills: ISkillItem[]
+}

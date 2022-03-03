@@ -1,6 +1,7 @@
 {
   "about": "About",
   "experience": "Experience",
+  "skills": "Skills",
   "projects": "Projects",
   "contact": "Contact",
   "locale-en": "English",
@@ -9,5 +10,7 @@
   "title-1": "Full Stack",
   "title-2": "Software Engineer",
   "now": "now",
-  "at": "at"
+  "at": "at",
+  "see-more": "See more",
+  "see-less": "See less"
 }

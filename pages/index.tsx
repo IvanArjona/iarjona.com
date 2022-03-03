@@ -4,6 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import FullPage from '../components/full-page';
 import Presentation from '../components/presentation';
 import Experience from '../components/experience';
+import Skills from '../components/skills';
 
 const Home: NextPage = () => (
   <>
@@ -16,7 +17,8 @@ const Home: NextPage = () => (
     </FullPage>
     <div className="h-4 w-full bg-purple-400" />
     <Experience />
-    <h1 id="home">Home</h1>
+    <div className="h-4 w-full bg-purple-400" />
+    <Skills />
   </>
 );
 

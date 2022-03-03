@@ -1,6 +1,7 @@
 {
   "about": "Sobre mi",
   "experience": "Experiencia",
+  "skills": "Habilidades",
   "projects": "Proyectos",
   "contact": "Contacto",
   "locale-en": "Inglés",
@@ -9,5 +10,7 @@
   "title-1": "Ingeniero de Software",
   "title-2": "Full Stack",
   "now": "actualidad",
-  "at": "en"
+  "at": "en",
+  "see-more": "Ver más",
+  "see-less": "Ver menos"
 }

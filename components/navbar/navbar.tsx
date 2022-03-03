@@ -7,8 +7,8 @@ const Navbar: React.FC<{}> = () => {
   const { t } = useTranslation('common');
 
   const navigation = [
-    { name: t('about'), href: '#home' },
     { name: t('experience'), href: '#experience' },
+    { name: t('skills'), href: '#skills' },
     { name: t('projects'), href: '#projects' },
     { name: t('contact'), href: '#contact' },
   ] as INavigation;

@@ -9,7 +9,7 @@ const Experience: React.FC<{}> = () => {
 
   const experienceItemsLang = experienceItems[locale === 'es' ? 'es' : 'en'];
   const experienceList = experienceItemsLang.map((item, index) => (
-    <ExperienceItem item={item} index={index} key={item.title} />
+    <ExperienceItem item={item} index={index} key={item.title + item.company} />
   ));
 
   return (
