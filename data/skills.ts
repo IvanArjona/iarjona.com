@@ -33,43 +33,43 @@ const skills: ISkillGroup[] = [
     skills: [
       {
         name: 'Python',
-        icon: PythonIcon,
+        Icon: PythonIcon,
       },
       {
         name: 'Django',
-        icon: DjangoIcon,
+        Icon: DjangoIcon,
       },
       {
         name: 'php',
-        icon: PHPIcon,
+        Icon: PHPIcon,
       },
       {
         name: 'Laravel',
-        icon: LaravelIcon,
+        Icon: LaravelIcon,
       },
       {
         name: 'NodeJS',
-        icon: NodeJSIcon,
+        Icon: NodeJSIcon,
       },
       {
         name: 'ExpressJS',
-        icon: ExpressJSIcon,
+        Icon: ExpressJSIcon,
       },
       {
         name: 'RabbitMQ',
-        icon: RabbitMQIcon,
+        Icon: RabbitMQIcon,
       },
       {
         name: 'Fast API',
-        icon: FastAPIIcon,
+        Icon: FastAPIIcon,
       },
       {
         name: 'Flask',
-        icon: FlaskIcon,
+        Icon: FlaskIcon,
       },
       {
         name: 'Java',
-        icon: JavaIcon,
+        Icon: JavaIcon,
       },
     ],
   },
@@ -78,43 +78,43 @@ const skills: ISkillGroup[] = [
     skills: [
       {
         name: 'JavaScript',
-        icon: JavascriptIcon,
+        Icon: JavascriptIcon,
       },
       {
         name: 'TypeScript',
-        icon: TypescriptIcon,
+        Icon: TypescriptIcon,
       },
       {
         name: 'VueJS',
-        icon: VueIcon,
+        Icon: VueIcon,
       },
       {
         name: 'Nuxt',
-        icon: NuxtIcon,
+        Icon: NuxtIcon,
       },
       {
         name: 'ReactJS',
-        icon: ReactIcon,
+        Icon: ReactIcon,
       },
       {
         name: 'Next.js',
-        icon: NextIcon,
+        Icon: NextIcon,
       },
       {
         name: 'Angular',
-        icon: AngularIcon,
+        Icon: AngularIcon,
       },
       {
         name: 'Tailwind CSS',
-        icon: TailwindIcon,
+        Icon: TailwindIcon,
       },
       {
         name: 'Boostrap',
-        icon: BootstrapIcon,
+        Icon: BootstrapIcon,
       },
       {
         name: 'Sass',
-        icon: SassIcon,
+        Icon: SassIcon,
       },
     ],
   },
@@ -123,31 +123,31 @@ const skills: ISkillGroup[] = [
     skills: [
       {
         name: 'Bash',
-        icon: BashIcon,
+        Icon: BashIcon,
       },
       {
         name: 'Docker',
-        icon: DockerIcon,
+        Icon: DockerIcon,
       },
       {
         name: 'Kubernetes',
-        icon: KubernetesIcon,
+        Icon: KubernetesIcon,
       },
       {
         name: 'PostgreSQL',
-        icon: PostgreSQLIcon,
+        Icon: PostgreSQLIcon,
       },
       {
         name: 'MySQL',
-        icon: MySQLIcon,
+        Icon: MySQLIcon,
       },
       {
         name: 'Mongo DB',
-        icon: MongoDBIcon,
+        Icon: MongoDBIcon,
       },
       {
         name: 'Google Cloud',
-        icon: GoogleCloudIcon,
+        Icon: GoogleCloudIcon,
       },
     ],
   },

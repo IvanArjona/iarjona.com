@@ -6,7 +6,7 @@ type Props = {
 };
 
 const SkillGroupItem: React.FC<Props> = ({ skill, hide }: Props) => {
-  const Icon = skill.icon;
+  const { Icon } = skill;
 
   return (
     <div

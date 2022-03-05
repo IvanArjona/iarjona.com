@@ -1,12 +1,4 @@
-import { MailIcon } from '@heroicons/react/solid';
-import LinkedinIcon from '../assets/icons/linkedin.svg';
-import GithubIcon from '../assets/icons/github.svg';
-
-const socials = [
-  { Icon: MailIcon, title: 'Email', href: 'mailto:ivan@iarjona.com' },
-  { Icon: GithubIcon, title: 'GitHub', href: 'https://github.com/IvanArjona' },
-  { Icon: LinkedinIcon, title: 'LinkedIn', href: 'https://www.linkedin.com/in/ivan-arjona/' },
-];
+import socials from '../data/socials';
 
 const Socials: React.FC<{}> = () => {
   const socialLinks = socials.map(({ Icon, title, href }) => (

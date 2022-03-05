@@ -4,7 +4,10 @@ const { i18n } = require('./next-i18next.config')
 module.exports = {
   env: {
     name: 'Iván Arjona',
-    email: 'ivan@iarjona.com'
+    fullName: 'Iván Arjona Alonso',
+    email: 'ivan@iarjona.com',
+    github: 'https://github.com/IvanArjona',
+    linkedin: 'https://www.linkedin.com/in/ivan-arjona/'
   },
   reactStrictMode: true,
   webpack(config) {

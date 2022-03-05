@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface INavigationItem {
   name: string
   href: string
@@ -17,10 +19,16 @@ export interface IExperienceItem {
 
 export interface ISkillItem {
   name: string,
-  icon: any
+  Icon: React.ComponentClass<any>
 }
 
 export interface ISkillGroup {
   title: string
   skills: ISkillItem[]
+}
+
+export interface ISocialItem {
+  Icon: React.ComponentClass<any>,
+  title: string,
+  href: string
 }
