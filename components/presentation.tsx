@@ -15,7 +15,7 @@ const Presentation: React.FC<{}> = () => {
       </div>
       <section className="-mt-20 sm:mt-auto z-10 sm:order-first sm:row-span-2 w-min mx-auto flex flex-col gap-2 md:gap-4 text-white">
         <h1 className="uppercase font-bold text-5xl md:text-7xl xl:text-9xl">
-          Iván Arjona
+          {process.env.name}
         </h1>
         <div>----</div>
         <h2 className="font-mono md:text-xl lg:text-2xl xl:text-3xl">

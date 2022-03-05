@@ -12,5 +12,12 @@
   "now": "now",
   "at": "at",
   "see-more": "See more",
-  "see-less": "See less"
+  "see-less": "See less",
+  "lets-taks": "Let's talk!",
+  "name": "Name",
+  "email": "Email",
+  "subject": "Subjects",
+  "message": "Message",
+  "email-me-at": "Email me at",
+  "send-message": "Send message"
 }

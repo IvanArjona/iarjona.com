@@ -12,5 +12,12 @@
   "now": "actualidad",
   "at": "en",
   "see-more": "Ver más",
-  "see-less": "Ver menos"
+  "see-less": "Ver menos",
+  "lets-taks": "¡Hablemos!",
+  "name": "Nombre",
+  "email": "Email",
+  "subject": "Asunto",
+  "message": "Mensaje",
+  "email-me-at": "Envíame un email a",
+  "send-message": "Enviar el mensaje"
 }
