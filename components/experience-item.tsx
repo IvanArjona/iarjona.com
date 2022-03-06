@@ -28,7 +28,7 @@ const ExperienceItem: React.FC<Props> = ({ item, index }: Props) => {
   return (
     <div className={`my-12 flex justify-between items-center ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
       <div className="order-1 w-5/12 hidden lg:block" />
-      <div className="z-20 flex items-center order-1 bg-gray-800 dark:bg-yellow-400 shadow-xl w-8 h-8 rounded-full">
+      <div className="z-20 flex items-center order-1 bg-purple-800 dark:bg-yellow-400 shadow-xl w-8 h-8 rounded-full">
         <div className="mx-auto font-semibold text-lg text-white" />
       </div>
       <div className="order-1 bg-gray-100 dark:bg-transparent rounded-lg shadow-xl w-10/12 lg:w-5/12 px-8 py-6">
@@ -38,7 +38,7 @@ const ExperienceItem: React.FC<Props> = ({ item, index }: Props) => {
         <time className="text-sm capita text-purple-500 dark:text-yellow-300">
           {dates}
         </time>
-        <h3 className="mb-3 font-bold text-lg lg:text-2xl">
+        <h3 className="mb-3 font-bold text-lg lg:text-2xl text-gray-800 dark:text-gray-100">
           {item.title}
           <span className="block font-semibold">
             {`${t('at')} ${item.company}`}

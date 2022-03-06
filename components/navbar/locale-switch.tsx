@@ -27,7 +27,7 @@ const LocaleSwitch: React.FC<{}> = () => {
   ));
 
   return (
-    <div className="text-white text-sm mr-4 flex gap-1">
+    <div className="text-sm mr-4 flex gap-1">
       {localeLinks}
     </div>
   );

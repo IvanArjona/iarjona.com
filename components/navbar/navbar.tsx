@@ -15,7 +15,7 @@ const Navbar: React.FC<{}> = () => {
 
   return (
     <>
-      <div className="fixed w-screen hidden md:block">
+      <div className="absolute w-screen hidden md:block">
         <FixedNavbar navigation={navigation} />
       </div>
       <div className="fixed z-40 w-screen md:hidden">

@@ -22,7 +22,7 @@ const ContactForm: React.FC<{}> = () => {
           href={`mailto:${email}`}
           target="_blank"
           rel="noreferrer"
-          className="font-mono text-purple-400 dark:text-yellow-400"
+          className="font-mono text-purple-600 dark:text-yellow-400"
         >
           {email}
         </a>

@@ -9,7 +9,7 @@ const FixedNavbarItem: React.FC<Props> = ({ item }: Props) => (
   <li>
     <Link href={item.href}>
       <a
-        className="text-gray-100 hover:underline underline-offset-2 decoration-purple-500 tracking-wide px-3 py-2 rounded-md font-medium"
+        className="hover:underline underline-offset-2 decoration-purple-500 tracking-wide px-3 py-2 rounded-md font-medium"
       >
         {item.name}
       </a>

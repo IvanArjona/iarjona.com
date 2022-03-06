@@ -13,7 +13,7 @@ const Presentation: React.FC<{}> = () => {
           <Image src={Photo} layout="intrinsic" unoptimized />
         </div>
       </div>
-      <section className="-mt-20 sm:mt-auto z-10 sm:order-first sm:row-span-2 w-min mx-auto flex flex-col gap-2 md:gap-4 text-white">
+      <section className="-mt-20 sm:mt-auto z-10 sm:order-first sm:row-span-2 w-min mx-auto flex flex-col gap-2 md:gap-4">
         <h1 className="uppercase font-bold text-5xl md:text-7xl xl:text-9xl">
           {process.env.name}
         </h1>

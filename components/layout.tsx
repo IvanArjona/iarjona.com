@@ -12,7 +12,9 @@ const Layout: React.FC<Props> = ({ children }: Props) => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Navbar />
-    <main>{children}</main>
+    <main>
+      {children}
+    </main>
     <Footer />
   </>
 );

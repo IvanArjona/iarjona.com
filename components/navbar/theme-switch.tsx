@@ -23,7 +23,7 @@ const ThemeSwitch: React.FC<{}> = () => {
   return (
     <button
       type="button"
-      className="p-4 text-white"
+      className="p-4"
       onClick={switchTheme}
       title={t('switch-theme')}
     >

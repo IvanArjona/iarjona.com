@@ -13,7 +13,7 @@ const CollapsibleNavbar: React.FC<Props> = ({ navigation }: Props) => (
   <Disclosure>
     {({ open }) => (
       <>
-        <div className="relative container mx-auto flex justify-between z-10 text-white">
+        <div className="relative container mx-auto flex justify-between z-10">
           {open}
           <ThemeSwitch />
           <Disclosure.Button className="p-4">

@@ -5,7 +5,7 @@ import {
 const MyDocument: React.FC<DocumentProps> = () => (
   <Html className="scroll-smooth">
     <Head />
-    <body className="bg-yellow-300 dark:bg-purple-900">
+    <body className="bg-yellow-500 dark:bg-purple-900 text-gray-100">
       <Main />
       <NextScript />
     </body>

@@ -5,7 +5,7 @@ const Contact: React.FC<{}> = () => {
   const { t } = useTranslation();
 
   return (
-    <div id="contact" className="py-28">
+    <div id="contact" className="py-28 bg-emerald-500 dark:bg-black">
       <div className="container mx-auto">
         <h2 className="text-3xl">
           {t('lets-taks')}

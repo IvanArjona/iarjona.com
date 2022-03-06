@@ -5,6 +5,7 @@ import Presentation from '../components/presentation';
 import Experience from '../components/experience';
 import Skills from '../components/skills';
 import Contact from '../components/contact';
+import Separator from '../components/separator';
 
 const Home: NextPage = () => (
   <>
@@ -15,11 +16,11 @@ const Home: NextPage = () => (
     <FullPage nextSection="experience">
       <Presentation />
     </FullPage>
-    <div className="h-4 w-full bg-purple-400" />
+    <Separator />
     <Experience />
-    <div className="h-4 w-full bg-purple-400" />
+    <Separator />
     <Skills />
-    <div className="h-4 w-full bg-purple-400" />
+    <Separator />
     <Contact />
   </>
 );

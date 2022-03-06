@@ -9,7 +9,7 @@ const CollapsibleNavbarItem: React.FC<Props> = ({ item }: Props) => (
   <li>
     <Link href={item.href}>
       <a
-        className="text-3xl text-white hover:underline underline-offset-2 decoration-purple-500 tracking-wide px-3 py-2 rounded-md font-medium"
+        className="text-3xl hover:underline underline-offset-2 decoration-purple-500 tracking-wide px-3 py-2 rounded-md font-medium"
       >
         {item.name}
       </a>
