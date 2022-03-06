@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-export-i18n';
 import skills from '../data/skills';
+import Header from './Header';
 import SkillsGroup from './skills-groups';
 
 const Skills: React.FC<{}> = () => {
@@ -9,8 +10,10 @@ const Skills: React.FC<{}> = () => {
 
   return (
     <div id="skills" className="py-28">
+      <Header>
+        {t('skills')}
+      </Header>
       <div className="container mx-auto">
-        <h2 className="text-3xl">{t('skills')}</h2>
         <div className="m-8 md:my-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-12">
           {skillsItems}
         </div>

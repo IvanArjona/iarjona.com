@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-export-i18n';
 import ContactForm from './contact-form';
+import Header from './Header';
 
 const Contact: React.FC<{}> = () => {
   const { t } = useTranslation();
@@ -7,9 +8,9 @@ const Contact: React.FC<{}> = () => {
   return (
     <div id="contact" className="py-28 bg-emerald-500 dark:bg-black">
       <div className="container mx-auto">
-        <h2 className="text-3xl">
+        <Header>
           {t('lets-taks')}
-        </h2>
+        </Header>
         <ContactForm />
       </div>
     </div>
