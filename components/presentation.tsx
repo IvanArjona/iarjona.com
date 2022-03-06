@@ -1,10 +1,10 @@
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-export-i18n';
 import Photo from '../assets/images/photo.jpg';
 import Socials from './socials';
 import Image from './image';
 
 const Presentation: React.FC<{}> = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   return (
     <div className="w-screen grid sm:grid-cols-2 gap-8">

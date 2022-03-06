@@ -1,10 +1,11 @@
-import { useTranslation } from 'next-i18next';
+import { useTranslation, useSelectedLanguage } from 'next-export-i18n';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 const LocaleSwitch: React.FC<{}> = () => {
-  const { locale: currentLocale, locales } = useRouter();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
+  const { lang } = useSelectedLanguage();
+  // eslint-disable-next-line prefer-destructuring
+  const locales = (process.env.locales as string).split(',');
 
   if (!locales) {
     return null;
@@ -13,12 +14,12 @@ const LocaleSwitch: React.FC<{}> = () => {
   const localeLinks = locales.map((locale: string) => (
     <Link
       key={locale}
-      href="#"
+      href={`?lang=${locale}`}
       locale={locale}
     >
       <a
         title={t(`locale-${locale}`)}
-        className={`uppercase ${locale === currentLocale ? 'underline' : ''}`}
+        className={`uppercase ${locale === lang ? 'underline' : ''}`}
       >
         {locale}
       </a>

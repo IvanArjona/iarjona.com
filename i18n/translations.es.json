@@ -1,0 +1,23 @@
+{
+  "about": "Sobre mi",
+  "experience": "Experiencia",
+  "skills": "Habilidades",
+  "projects": "Proyectos",
+  "contact": "Contacto",
+  "locale-en": "Inglés",
+  "locale-es": "Español",
+  "switch-theme": "Cambiar tema",
+  "title-1": "Ingeniero de Software",
+  "title-2": "Full Stack",
+  "now": "actualidad",
+  "at": "en",
+  "see-more": "Ver más",
+  "see-less": "Ver menos",
+  "lets-taks": "¡Hablemos!",
+  "name": "Nombre",
+  "email": "Email",
+  "subject": "Asunto",
+  "message": "Mensaje",
+  "email-me-at": "Envíame un email a",
+  "send-message": "Enviar el mensaje"
+}

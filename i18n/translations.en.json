@@ -1,0 +1,23 @@
+{
+  "about": "About",
+  "experience": "Experience",
+  "skills": "Skills",
+  "projects": "Projects",
+  "contact": "Contact",
+  "locale-en": "English",
+  "locale-es": "Spanish",
+  "switch-theme": "Switch theme",
+  "title-1": "Full Stack",
+  "title-2": "Software Engineer",
+  "now": "now",
+  "at": "at",
+  "see-more": "See more",
+  "see-less": "See less",
+  "lets-taks": "Let's talk!",
+  "name": "Name",
+  "email": "Email",
+  "subject": "Subjects",
+  "message": "Message",
+  "email-me-at": "Email me at",
+  "send-message": "Send message"
+}

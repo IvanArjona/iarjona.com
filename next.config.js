@@ -1,5 +1,3 @@
-const { i18n } = require('./next-i18next.config')
-
 /** @type {import('next').NextConfig} */
 module.exports = {
   env: {
@@ -7,7 +5,8 @@ module.exports = {
     fullName: 'Iván Arjona Alonso',
     email: 'ivan@iarjona.com',
     github: 'https://github.com/IvanArjona',
-    linkedin: 'https://www.linkedin.com/in/ivan-arjona/'
+    linkedin: 'https://www.linkedin.com/in/ivan-arjona/',
+    locales: 'es,en'
   },
   reactStrictMode: true,
   webpack(config) {
@@ -20,6 +19,5 @@ module.exports = {
   },
   images: {
     loader: 'custom'
-  },
-  i18n
+  }
 }

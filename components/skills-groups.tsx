@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-export-i18n';
 import { useState } from 'react';
 import { ISkillGroup } from '../types';
 import SkillGroupItem from './skills-groups-items';
@@ -9,7 +9,7 @@ type Props = {
 
 const SkillGroup: React.FC<Props> = ({ item }: Props) => {
   const [seeMore, setSeeMore] = useState(true);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   const skills = item.skills
     .map((skill, index) => (

@@ -1,9 +1,9 @@
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-export-i18n';
 import skills from '../data/skills';
 import SkillsGroup from './skills-groups';
 
 const Skills: React.FC<{}> = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   const skillsItems = skills.map((item) => <SkillsGroup item={item} key={item.title} />);
 

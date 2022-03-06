@@ -1,10 +1,10 @@
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-export-i18n';
 import { INavigation } from '../../types';
 import FixedNavbar from './fixed-navbar';
 import CollapsibleNavbar from './collapsible-navbar';
 
 const Navbar: React.FC<{}> = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   const navigation = [
     { name: t('experience'), href: '#experience' },

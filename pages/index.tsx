@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import FullPage from '../components/full-page';
 import Presentation from '../components/presentation';
 import Experience from '../components/experience';
@@ -24,11 +23,5 @@ const Home: NextPage = () => (
     <Contact />
   </>
 );
-
-export const getStaticProps = async ({ locale }: { locale: string }) => ({
-  props: {
-    ...await serverSideTranslations(locale, ['common']),
-  },
-});
 
 export default Home;
