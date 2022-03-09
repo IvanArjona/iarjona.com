@@ -4,7 +4,7 @@ import Socials from './socials';
 import Image from './image';
 
 const Presentation: React.FC<{}> = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   return (
     <div className="w-screen grid sm:grid-cols-2 gap-8">

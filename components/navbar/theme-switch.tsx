@@ -6,7 +6,7 @@ import { useTranslation } from 'next-i18next';
 const ThemeSwitch: React.FC<{}> = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   const Icon = theme === 'dark' ? MoonIcon : SunIcon;
 

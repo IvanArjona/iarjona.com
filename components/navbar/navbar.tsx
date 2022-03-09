@@ -4,7 +4,7 @@ import FixedNavbar from './fixed-navbar';
 import CollapsibleNavbar from './collapsible-navbar';
 
 const Navbar: React.FC<{}> = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   const navigation = [
     { name: t('experience'), href: '#experience' },

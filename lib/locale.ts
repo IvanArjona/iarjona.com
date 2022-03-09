@@ -12,9 +12,8 @@ const getI18nPaths = () => i18nextConfig.i18n.locales.map((locale: string) => ({
 }));
 
 async function getI18nProps(context: GetStaticPropsContext<ParsedUrlQuery, PreviewData>) {
-  const ns = ['common'];
   const locale = (context?.params?.locale || i18nextConfig.i18n.defaultLocale) as string;
-  return serverSideTranslations(locale, ns);
+  return serverSideTranslations(locale);
 }
 
 export const getStaticPaths: GetStaticPaths = () => ({

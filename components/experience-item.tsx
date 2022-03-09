@@ -22,7 +22,7 @@ const formatDates = (item: IExperienceItem, locale?: string, defaultDate?: strin
 
 const ExperienceItem: React.FC<Props> = ({ item, index }: Props) => {
   const { locale } = useRouter();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   const dates = formatDates(item, locale, t('now'));
 
   return (

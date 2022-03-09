@@ -5,7 +5,7 @@ import i18nextConfig from '../../next-i18next.config';
 
 const LocaleSwitch: React.FC<{}> = () => {
   const router = useRouter();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   const { defaultLocale } = i18nextConfig.i18n;
   const currentLocale = router.query.locale || defaultLocale;

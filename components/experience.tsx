@@ -6,7 +6,7 @@ import Header from './Header';
 
 const Experience: React.FC<{}> = () => {
   const { locale } = useRouter();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   const experienceItemsLang = experienceItems[locale === 'es' ? 'es' : 'en'];
   const experienceList = experienceItemsLang.map((item, index) => (

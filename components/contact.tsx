@@ -3,7 +3,7 @@ import ContactForm from './contact-form';
 import Header from './Header';
 
 const Contact: React.FC<{}> = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   return (
     <div id="contact" className="py-28 bg-emerald-500 dark:bg-black">

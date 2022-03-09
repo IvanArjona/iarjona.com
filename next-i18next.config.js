@@ -5,6 +5,7 @@ const i18nConfig = {
       'en',
     ],
     defaultLocale: 'es',
+    defaultNS: 'common',
   },
 };
 

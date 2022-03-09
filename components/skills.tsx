@@ -4,7 +4,7 @@ import Header from './Header';
 import SkillsGroup from './skills-groups';
 
 const Skills: React.FC<{}> = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   const skillsItems = skills.map((item) => <SkillsGroup item={item} key={item.title} />);
 

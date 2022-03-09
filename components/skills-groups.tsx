@@ -9,7 +9,7 @@ type Props = {
 
 const SkillGroup: React.FC<Props> = ({ item }: Props) => {
   const [seeMore, setSeeMore] = useState(true);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   const skills = item.skills
     .map((skill, index) => (
