@@ -1,9 +1,9 @@
-import { useTranslation } from 'next-export-i18n';
+import { useTranslation } from 'next-i18next';
 import ContactForm from './contact-form';
 import Header from './Header';
 
 const Contact: React.FC<{}> = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
 
   return (
     <div id="contact" className="py-28 bg-emerald-500 dark:bg-black">

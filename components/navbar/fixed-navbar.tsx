@@ -8,17 +8,15 @@ type Props = {
 };
 
 const FixedNavbar: React.FC<Props> = ({ navigation }: Props) => (
-  <nav className="w-screen">
-    <ul className="h-16 container mx-auto flex gap-8 place-items-center justify-evenly">
-      {navigation.map((item) => (
-        <FixedNavbarItem key={item.name} item={item} />
-      ))}
-      <li className="flex items-center">
-        <LocaleSwitch />
-        <ThemeSwitch />
-      </li>
-    </ul>
-  </nav>
+  <ul className="h-16 container mx-auto flex gap-8 place-items-center justify-evenly">
+    {navigation.map((item) => (
+      <FixedNavbarItem key={item.name} item={item} />
+    ))}
+    <li className="flex items-center">
+      <LocaleSwitch />
+      <ThemeSwitch />
+    </li>
+  </ul>
 );
 
 export default FixedNavbar;

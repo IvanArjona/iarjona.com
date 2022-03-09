@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useTranslation } from 'next-export-i18n';
+import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { IExperienceItem } from '../types';
 
@@ -22,7 +22,7 @@ const formatDates = (item: IExperienceItem, locale?: string, defaultDate?: strin
 
 const ExperienceItem: React.FC<Props> = ({ item, index }: Props) => {
   const { locale } = useRouter();
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   const dates = formatDates(item, locale, t('now'));
 
   return (

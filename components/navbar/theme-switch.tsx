@@ -1,12 +1,12 @@
 import { useTheme } from 'next-themes';
 import { SunIcon, MoonIcon } from '@heroicons/react/outline';
 import { useEffect, useState } from 'react';
-import { useTranslation } from 'next-export-i18n';
+import { useTranslation } from 'next-i18next';
 
 const ThemeSwitch: React.FC<{}> = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
 
   const Icon = theme === 'dark' ? MoonIcon : SunIcon;
 

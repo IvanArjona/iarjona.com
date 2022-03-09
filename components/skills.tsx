@@ -1,10 +1,10 @@
-import { useTranslation } from 'next-export-i18n';
+import { useTranslation } from 'next-i18next';
 import skills from '../data/skills';
 import Header from './Header';
 import SkillsGroup from './skills-groups';
 
 const Skills: React.FC<{}> = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
 
   const skillsItems = skills.map((item) => <SkillsGroup item={item} key={item.title} />);
 

@@ -1,10 +1,10 @@
-import { useTranslation } from 'next-export-i18n';
+import { useTranslation } from 'next-i18next';
 import { INavigation } from '../../types';
 import FixedNavbar from './fixed-navbar';
 import CollapsibleNavbar from './collapsible-navbar';
 
 const Navbar: React.FC<{}> = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
 
   const navigation = [
     { name: t('experience'), href: '#experience' },
@@ -15,12 +15,12 @@ const Navbar: React.FC<{}> = () => {
 
   return (
     <>
-      <div className="absolute w-screen hidden md:block">
+      <nav className="absolute w-screen hidden md:block">
         <FixedNavbar navigation={navigation} />
-      </div>
-      <div className="fixed z-40 w-screen md:hidden">
+      </nav>
+      <nav className="fixed z-40 w-screen md:hidden">
         <CollapsibleNavbar navigation={navigation} />
-      </div>
+      </nav>
     </>
   );
 };

@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-export-i18n';
+import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import ExperienceItem from './experience-item';
 import experienceItems from '../data/experience';
@@ -6,7 +6,7 @@ import Header from './Header';
 
 const Experience: React.FC<{}> = () => {
   const { locale } = useRouter();
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
 
   const experienceItemsLang = experienceItems[locale === 'es' ? 'es' : 'en'];
   const experienceList = experienceItemsLang.map((item, index) => (

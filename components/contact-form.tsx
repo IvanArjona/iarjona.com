@@ -1,9 +1,9 @@
-import { useTranslation } from 'next-export-i18n';
+import { useTranslation } from 'next-i18next';
 import { MailIcon, PaperAirplaneIcon } from '@heroicons/react/solid';
 import ContactFormInput from './contact-form-input';
 
 const ContactForm: React.FC<{}> = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   // eslint-disable-next-line prefer-destructuring
   const email = process.env.email;
 

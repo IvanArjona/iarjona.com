@@ -1,25 +1,24 @@
-import { useTranslation, useSelectedLanguage } from 'next-export-i18n';
+import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import i18nextConfig from '../../next-i18next.config';
 
 const LocaleSwitch: React.FC<{}> = () => {
-  const { t } = useTranslation();
-  const { lang } = useSelectedLanguage();
-  // eslint-disable-next-line prefer-destructuring
-  const locales = (process.env.locales as string).split(',');
+  const router = useRouter();
+  const { t } = useTranslation('common');
 
-  if (!locales) {
-    return null;
-  }
+  const { defaultLocale } = i18nextConfig.i18n;
+  const currentLocale = router.query.locale || defaultLocale;
+  const { locales } = i18nextConfig.i18n;
 
   const localeLinks = locales.map((locale: string) => (
     <Link
       key={locale}
-      href={`?lang=${locale}`}
-      locale={locale}
+      href={`/${locale === defaultLocale ? '' : locale}`}
     >
       <a
         title={t(`locale-${locale}`)}
-        className={`uppercase ${locale === lang ? 'underline' : ''}`}
+        className={`uppercase ${locale === currentLocale ? 'underline' : ''}`}
       >
         {locale}
       </a>

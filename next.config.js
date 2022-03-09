@@ -6,7 +6,6 @@ module.exports = {
     email: 'ivan@iarjona.com',
     github: 'https://github.com/IvanArjona',
     linkedin: 'https://www.linkedin.com/in/ivan-arjona/',
-    locales: 'es,en'
   },
   reactStrictMode: true,
   webpack(config) {

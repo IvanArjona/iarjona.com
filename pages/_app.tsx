@@ -2,6 +2,7 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
+import { appWithTranslation } from 'next-i18next';
 import Layout from '../components/layout';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => (
@@ -12,4 +13,4 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => (
   </ThemeProvider>
 );
 
-export default MyApp;
+export default appWithTranslation(MyApp);
