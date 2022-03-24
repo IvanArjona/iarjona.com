@@ -28,10 +28,14 @@ const CollapsibleNavbar: React.FC<Props> = ({ navigation }: Props) => (
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Disclosure.Panel className="absolute top-0 h-screen w-screen bg-red-500">
+          <Disclosure.Panel className="absolute top-0 h-screen w-screen bg-purple-500 dark:bg-red-500">
             <div className="pt-24 p-8 h-full flex flex-col justify-between">
               <ul className="flex flex-col gap-8">
-                {navigation.map((item) => <CollapsibleNavbarItem key={item.name} item={item} />)}
+                {navigation.map((item) => (
+                  <Disclosure.Button>
+                    <CollapsibleNavbarItem key={item.name} item={item} />
+                  </Disclosure.Button>
+                ))}
               </ul>
               <Socials />
             </div>
