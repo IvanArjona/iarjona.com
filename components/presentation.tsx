@@ -1,7 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import { useTranslation } from 'next-i18next';
-import Photo from '../assets/images/photo.jpg';
 import Socials from './socials';
-import Image from './image';
 
 const Presentation: React.FC<{}> = () => {
   const { t } = useTranslation();
@@ -9,9 +8,10 @@ const Presentation: React.FC<{}> = () => {
   return (
     <div className="w-screen grid sm:grid-cols-2 gap-8">
       <div className="col-start-0 mx-auto">
-        <div className="w-64 xl:w-72 2xl:w-80 shadow-[1rem_-1rem] shadow-purple-500">
-          <Image src={Photo} layout="intrinsic" unoptimized />
-        </div>
+        <picture>
+          <source srcSet="/images/photo.webp" type="image/webp" />
+          <img src="/images/photo.jpg" alt={process.env.name} className="w-64 xl:w-72 2xl:w-80 shadow-[1rem_-1rem] shadow-purple-500" />
+        </picture>
       </div>
       <section className="-mt-20 sm:mt-auto z-10 sm:order-first sm:row-span-2 w-min mx-auto flex flex-col gap-2 md:gap-4">
         <h1 className="uppercase font-bold text-5xl md:text-7xl xl:text-9xl">
