@@ -32,3 +32,12 @@ export interface ISocialItem {
   title: string,
   href: string
 }
+
+export interface IProjectItem {
+  name: string,
+  description: string[],
+  image: string,
+  github?: string,
+  link?: string,
+  tags: string[],
+}

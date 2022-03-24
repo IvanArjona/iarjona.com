@@ -7,6 +7,7 @@ import Skills from '../../components/skills';
 import Contact from '../../components/contact';
 import Separator from '../../components/separator';
 import { getStaticPaths, getStaticProps } from '../../lib/locale';
+import Projects from '../../components/projects';
 
 export { getStaticPaths, getStaticProps };
 
@@ -21,6 +22,8 @@ const Home: NextPage = () => (
     </FullPage>
     <Separator />
     <Experience />
+    <Separator />
+    <Projects />
     <Separator />
     <Skills />
     <Separator />

@@ -3,10 +3,14 @@ import { useRouter } from 'next/router';
 import ExperienceItem from './experience-item';
 import experienceItems from '../data/experience';
 import Header from './Header';
+import i18nextConfig from '../next-i18next.config';
 
 const Experience: React.FC<{}> = () => {
-  const { locale } = useRouter();
+  const router = useRouter();
   const { t } = useTranslation();
+
+  const { defaultLocale } = i18nextConfig.i18n;
+  const locale = router.query.locale || defaultLocale;
 
   const experienceItemsLang = experienceItems[locale === 'es' ? 'es' : 'en'];
   const experienceList = experienceItemsLang.map((item, index) => (
