@@ -29,6 +29,7 @@ const Navbar: React.FC<{}> = () => {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleResize, { passive: true });
+    setInnerWidth(window.innerWidth);
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
