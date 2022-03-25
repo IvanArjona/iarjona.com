@@ -13,7 +13,7 @@ const SkillGroup: React.FC<Props> = ({ item }: Props) => {
 
   const skills = item.skills
     .map((skill, index) => (
-      <SkillGroupItem skill={skill} key={skill.name} hide={seeMore && index >= 5} />
+      <SkillGroupItem skill={skill} key={skill.name} hide={seeMore && index >= 5} index={index} />
     ));
 
   const toggleSeeMore = () => {

@@ -12,6 +12,7 @@ const ContactForm: React.FC<{}> = () => {
       action={`https://formsubmit.co/${email}`}
       method="POST"
       className="grid grid-cols-2 md:grid-cols-3 gap-8 m-8"
+      data-aos="flip-up"
     >
       <div className="col-span-2 md:col-span-1 row-span-1 md:row-span-3 flex flex-col items-center justify-center gap-2">
         <MailIcon className="h-12 w-12" />

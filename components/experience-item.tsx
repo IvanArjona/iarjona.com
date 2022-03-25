@@ -31,7 +31,10 @@ const ExperienceItem: React.FC<Props> = ({ item, index }: Props) => {
       <div className="z-20 flex items-center order-1 bg-purple-800 dark:bg-yellow-400 shadow-xl w-8 h-8 rounded-full">
         <div className="mx-auto font-semibold text-lg text-white" />
       </div>
-      <div className="order-1 bg-gray-100 dark:bg-transparent rounded-lg shadow-xl w-10/12 lg:w-5/12 px-8 py-6">
+      <div
+        className="order-1 bg-gray-100 dark:bg-transparent rounded-lg shadow-xl w-10/12 lg:w-5/12 px-8 py-6"
+        data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'}
+      >
         <div className="float-right m-2 p-2 rounded dark:bg-gray-200">
           <img src={item.logo} height={64} width={64} alt={item.company} />
         </div>
