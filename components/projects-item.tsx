@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import { useTranslation } from 'next-i18next';
 import { ExternalLinkIcon } from '@heroicons/react/outline';
 import { IProjectItem } from '../types';
 import GithubIcon from '../assets/icons/github.svg';
@@ -10,8 +9,6 @@ type Props = {
 };
 
 const ProjectItem: React.FC<Props> = ({ item, index }: Props) => {
-  const { t } = useTranslation();
-
   const tags = item.tags.map((tag) => (
     <span className="font-mono bg-yellow-400 dark:bg-gray-600 px-3 py-1 rounded-sm">
       {tag}
