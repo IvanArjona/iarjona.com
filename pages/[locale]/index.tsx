@@ -11,24 +11,31 @@ import Projects from '../../components/projects';
 
 export { getStaticPaths, getStaticProps };
 
-const Home: NextPage = () => (
-  <>
-    <Head>
-      <title>Home</title>
-      <meta name="description" content="Description" />
-    </Head>
-    <FullPage nextSection="experience">
+const Home: NextPage = () => {
+  const sections: React.ReactNode[] = [
+    <FullPage key="presentation" nextSection="experience">
       <Presentation />
-    </FullPage>
-    <Separator />
-    <Experience />
-    <Separator />
-    <Projects />
-    <Separator />
-    <Skills />
-    <Separator />
-    <Contact />
-  </>
-);
+    </FullPage>,
+    <Experience key="experience" />,
+    <Projects key="projects" />,
+    <Skills key="skills" />,
+    <Contact key="contact" />,
+  ];
+
+  const sectionsWithSeparator = sections.reduce((prev, curr, index) => (
+    // eslint-disable-next-line react/no-array-index-key
+    [prev, <Separator key={index} />, curr]
+  ));
+
+  return (
+    <>
+      <Head>
+        <title>Home</title>
+        <meta name="description" content="Description" />
+      </Head>
+      {sectionsWithSeparator}
+    </>
+  );
+};
 
 export default Home;
