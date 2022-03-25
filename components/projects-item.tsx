@@ -10,7 +10,7 @@ type Props = {
 
 const ProjectItem: React.FC<Props> = ({ item, index }: Props) => {
   const tags = item.tags.map((tag) => (
-    <span className="font-mono bg-yellow-400 dark:bg-gray-600 px-3 py-1 rounded-sm">
+    <span key={tag} className="font-mono bg-yellow-400 dark:bg-gray-600 px-3 py-1 rounded-sm">
       {tag}
     </span>
   ));
@@ -38,7 +38,7 @@ const ProjectItem: React.FC<Props> = ({ item, index }: Props) => {
         <h3 className="text-2xl lg:text-3xl font-bold font-mono">{item.name}</h3>
         <hr className="mt-2 mb-4 border-gray-200 dark:border-gray-500" />
         {item.description.map((paragraph) => (
-          <p className="leading-relaxed">
+          <p key={paragraph} className="leading-relaxed">
             {paragraph}
           </p>
         ))}

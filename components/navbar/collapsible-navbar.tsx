@@ -32,7 +32,7 @@ const CollapsibleNavbar: React.FC<Props> = ({ navigation }: Props) => (
             <div className="pt-24 p-8 h-full flex flex-col justify-between">
               <ul className="flex flex-col gap-8">
                 {navigation.map((item) => (
-                  <Disclosure.Button>
+                  <Disclosure.Button key={item.href}>
                     <CollapsibleNavbarItem key={item.name} item={item} />
                   </Disclosure.Button>
                 ))}
