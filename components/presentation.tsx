@@ -17,15 +17,16 @@ const Presentation: React.FC<{}> = () => {
         <h1 className="uppercase font-bold text-5xl md:text-7xl xl:text-9xl">
           {process.env.name}
         </h1>
-        <div>----</div>
+        <div>
+          <span className="block bg-purple-500 h-1 w-16 md:w-28 rounded-lg ml-2" />
+          <span className="block bg-purple-500 h-1 w-16 md:w-28 rounded-lg mt-1 ml-14 md:ml-24" />
+        </div>
         <h2 className="font-mono md:text-xl lg:text-2xl xl:text-3xl">
           <span className="block">{t('title-1')}</span>
           <span className="ml-4">{t('title-2')}</span>
         </h2>
       </section>
-      <div className="">
-        <Socials />
-      </div>
+      <Socials />
     </div>
   );
 };
