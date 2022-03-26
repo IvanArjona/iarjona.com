@@ -13,7 +13,7 @@ const ProjectItem: React.FC<Props> = ({ item, index }: Props) => {
     <span
       key={tag}
       className="font-mono bg-yellow-400 dark:bg-gray-600 px-3 py-1 rounded-sm flex items-center"
-      data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'}
+      data-aos="fade-in"
       data-aos-delay={`${tagIndex + 8}00`}
       data-aos-duration="800"
     >
@@ -23,7 +23,7 @@ const ProjectItem: React.FC<Props> = ({ item, index }: Props) => {
 
   return (
     <div
-      className="flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-14"
+      className="flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-14 overflow-hidden"
     >
       <aside className="lg:max-w-1/2 w-fit shrink">
         <a
@@ -60,7 +60,9 @@ const ProjectItem: React.FC<Props> = ({ item, index }: Props) => {
           ) : ''}
         </div>
       </aside>
-      <div className={`flex-1 ${index % 2 === 0 ? '' : 'md:order-first'}`}>
+      <div
+        className={`flex-1 ${index % 2 === 0 ? '' : 'md:order-first'}`}
+      >
         <h3
           className="text-2xl lg:text-3xl font-bold font-mono"
           data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'}
@@ -81,7 +83,7 @@ const ProjectItem: React.FC<Props> = ({ item, index }: Props) => {
             {paragraph}
           </p>
         ))}
-        <div className="flex flex-row gap-4 mt-4">
+        <div className="flex flex-row gap-4 mt-4 flex-wrap">
           {tags}
         </div>
       </div>
