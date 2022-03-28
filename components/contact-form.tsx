@@ -41,7 +41,7 @@ const ContactForm: React.FC<{}> = () => {
           type="submit"
           className="font-bold rounded-lg text-sm px-6 py-3 text-center
           text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300
-          dark:bg-yellow-400 dark:hover:bg-yellow-700 dark:focus:ring-purple-900"
+          dark:focus:ring-purple-900"
         >
           {t('send-message')}
           <PaperAirplaneIcon className="inline ml-2 h-6 w-6 rotate-90" />
