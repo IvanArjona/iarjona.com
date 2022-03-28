@@ -26,6 +26,7 @@ const ThemeSwitch: React.FC<{}> = () => {
       className="p-4"
       onClick={switchTheme}
       title={t('switch-theme')}
+      aria-label={t('switch-theme')}
     >
       <span className="sr-only">{t('switch-theme')}</span>
       <Icon
