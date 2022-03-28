@@ -11,6 +11,7 @@ const ContactFormInput: React.FC<Props> = ({
 }: Props) => (
   <div className="relative z-0 mb-6 w-full group">
     <input
+      id={name}
       name={name}
       className="block py-2.5 px-0 w-full appearance-none
         text-sm tracking-wider text-gray-900 bg-transparent border-0 border-b-2 border-purple-300
