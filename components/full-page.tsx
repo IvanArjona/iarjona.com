@@ -13,7 +13,10 @@ function nextSectionButton(nextSection?: string): JSX.Element | null {
 
   return (
     <Link href={`#${nextSection}`}>
-      <a className="absolute bottom-2 md:bottom-10 lg:bottom-20 p-2">
+      <a
+        className="absolute bottom-2 md:bottom-10 lg:bottom-20 p-2"
+        aria-label={nextSection}
+      >
         <ChevronDownIcon className="h-20 w-20 animate-bounce" aria-hidden="true" />
       </a>
     </Link>
