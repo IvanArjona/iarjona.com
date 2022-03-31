@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useTranslation } from 'next-i18next';
+import Image from './image';
 import Socials from './socials';
 
 const Presentation: React.FC<{}> = () => {
@@ -8,10 +9,9 @@ const Presentation: React.FC<{}> = () => {
   return (
     <div className="w-screen grid sm:grid-cols-2 gap-8">
       <div className="col-start-0 mx-auto" data-aos="fade-left">
-        <picture>
-          <source srcSet="/images/photo.webp" type="image/webp" />
-          <img src="/images/photo.jpg" alt={process.env.name} className="w-64 xl:w-72 2xl:w-80 shadow-[1rem_-1rem] shadow-purple-500" />
-        </picture>
+        <div className="h-64 w-64 xl:h-72 xl:w-72 2xl:h-80 2xl:w-80 shadow-[1rem_-1rem] shadow-purple-500 relative">
+          <Image src="/images/photo.jpg" alt={process.env.name} layout="fill" />
+        </div>
       </div>
       <section
         className="-mt-20 sm:mt-auto z-10 sm:order-first sm:row-span-2 w-min mx-auto flex flex-col gap-2 md:gap-4"

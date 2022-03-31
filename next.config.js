@@ -17,6 +17,7 @@ module.exports = {
     return config
   },
   images: {
-    loader: 'custom'
-  }
+    loader: 'custom',
+    path: 'https://iarjona.mo.cloudinary.net',
+  },  
 }

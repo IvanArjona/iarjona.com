@@ -2,6 +2,7 @@
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { IExperienceItem } from '../types';
+import Image from './image';
 
 type Props = {
   item: IExperienceItem,
@@ -36,7 +37,7 @@ const ExperienceItem: React.FC<Props> = ({ item, index }: Props) => {
         data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'}
       >
         <div className="float-right m-2 p-2 rounded dark:bg-gray-200">
-          <img src={item.logo} height={64} width={64} alt={item.company} />
+          <Image src={item.logo} height={64} width={64} alt={item.company} />
         </div>
         <time className="text-sm capita text-purple-500 dark:text-yellow-300">
           {dates}

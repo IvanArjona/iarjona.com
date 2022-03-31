@@ -2,6 +2,7 @@
 import { ExternalLinkIcon } from '@heroicons/react/outline';
 import { IProjectItem } from '../types';
 import GithubIcon from '../assets/icons/github.svg';
+import Image from './image';
 
 type Props = {
   item: IProjectItem,
@@ -31,7 +32,9 @@ const ProjectItem: React.FC<Props> = ({ item, index }: Props) => {
           className="block mb-4 max-h-80 w-fit rounded-sm"
           data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
         >
-          <img src={item.image} alt={item.name} className="max-h-[inherit] w-auto border-8 border-purple-500 dark:border-yellow-500" />
+          <div className="max-h-[inherit] w-auto border-8 border-purple-500 dark:border-yellow-500">
+            <Image src={item.image} alt={item.name} layout="fill" />
+          </div>
         </a>
         <div className="flex items-center justify-center gap-4 font-mono">
           <a
