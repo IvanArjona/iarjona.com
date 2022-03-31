@@ -6,7 +6,7 @@ const projectsEN: IProjectItem[] = [
     description: ['A Visual Studio Code extension to create a local tunnel so your local http server can be accessed remotely using Cloudflare Tunnel'],
     github: 'https://github.com/IvanArjona/cloudflare-tunnel-vscode',
     link: 'https://marketplace.visualstudio.com/items?itemName=IvanArjona.cloudflaretunnel',
-    image: 'https://raw.githubusercontent.com/IvanArjona/cloudflare-tunnel-vscode/master/images/preview.gif',
+    image: '/images/projects/cloudflare-tunnel-for-vscode.gif',
     tags: ['JavaScript', 'TypeScript', 'Visual Studio Code', 'http'],
   },
   {
@@ -16,7 +16,7 @@ const projectsEN: IProjectItem[] = [
       'Collection and representation of this data on the map of Spain at the province and municipality level, allowing its export to CSV and JSON for use in data mining processes.',
     ],
     github: 'https://github.com/IvanArjona/TFG-Datos-publicos',
-    image: 'https://raw.githubusercontent.com/IvanArjona/TFG-Datos-publicos/master/docs/latex/img/manual/mapa-municipios.png',
+    image: '/images/projects/tfg-map.png',
     tags: ['Python', 'Pandas', 'Flask', 'Mongodb', 'Data mining'],
   },
 ];
