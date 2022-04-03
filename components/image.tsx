@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 const customImageLoader: ImageLoader = (props: ImageLoaderProps): string => {
   if (process.env.NODE_ENV === 'development') {
-    return props.src;
+    return `${props.src}?width=${props.width}`;
   }
 
   const quality = props.quality ? props.quality : 75;
