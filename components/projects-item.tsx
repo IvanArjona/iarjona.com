@@ -29,12 +29,10 @@ const ProjectItem: React.FC<Props> = ({ item, index }: Props) => {
       <aside className="lg:max-w-1/2 w-fit shrink">
         <a
           href={item.link || item.github}
-          className="block mb-4 max-h-80 w-fit rounded-sm"
+          className="block mb-4 h-60 sm:h-80 aspect-[4/3] rounded-sm border-8 border-purple-500 dark:border-yellow-500"
           data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
         >
-          <div className="max-h-[inherit] w-auto border-8 border-purple-500 dark:border-yellow-500">
-            <Image src={item.image} alt={item.name} layout="fill" />
-          </div>
+          <Image src={item.image} alt={item.name} layout="fill" />
         </a>
         <div className="flex items-center justify-center gap-4 font-mono">
           <a

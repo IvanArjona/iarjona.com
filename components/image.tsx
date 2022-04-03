@@ -2,6 +2,10 @@ import NextImage, { ImageLoader, ImageLoaderProps, ImageProps } from 'next/image
 import { FC } from 'react';
 
 const customImageLoader: ImageLoader = (props: ImageLoaderProps): string => {
+  if (process.env.NODE_ENV === 'development') {
+    return props.src;
+  }
+
   const quality = props.quality ? props.quality : 75;
   const transformations = [`w_${props.width}`, `q_${quality || 'auto'}`].join(',');
   return `${props.config.path}${props.src}?tx=${transformations}`;
