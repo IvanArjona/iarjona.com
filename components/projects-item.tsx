@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { ExternalLinkIcon } from '@heroicons/react/outline';
+import { useTranslation } from 'next-i18next';
 import { IProjectItem } from '../types';
 import GithubIcon from '../assets/icons/github.svg';
 import Image from './image';
@@ -10,6 +11,8 @@ type Props = {
 };
 
 const ProjectItem: React.FC<Props> = ({ item, index }: Props) => {
+  const { t } = useTranslation();
+
   const tags = item.tags.map((tag, tagIndex) => (
     <span
       key={tag}
@@ -43,7 +46,7 @@ const ProjectItem: React.FC<Props> = ({ item, index }: Props) => {
             data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
             data-aos-delay="100"
           >
-            Github
+            GitHub
             <GithubIcon className="h-6 w-6 fill-white" />
           </a>
           {item.link ? (
@@ -55,7 +58,7 @@ const ProjectItem: React.FC<Props> = ({ item, index }: Props) => {
               data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
               data-aos-delay="200"
             >
-              Link
+              {t('link')}
               <ExternalLinkIcon className="h-6 w-6" />
             </a>
           ) : ''}

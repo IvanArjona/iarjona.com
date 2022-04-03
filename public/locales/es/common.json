@@ -19,5 +19,6 @@
   "subject": "Asunto",
   "message": "Mensaje",
   "email-me-at": "Envíame un email a",
-  "send-message": "Enviar el mensaje"
+  "send-message": "Enviar el mensaje",
+  "link": "Enlace"
 }
