@@ -7,7 +7,7 @@ const customImageLoader: ImageLoader = (props: ImageLoaderProps): string => {
   }
 
   const quality = props.quality ? props.quality : 75;
-  const transformations = [`w_${props.width}`, `q_${quality || 'auto'}, c_limit`].join(',');
+  const transformations = [`w_${props.width}`, `q_${quality || 'auto'}`, 'c_limit'].join(',');
   return `${props.config.path}${props.src}?tx=${transformations}`;
 };
 
