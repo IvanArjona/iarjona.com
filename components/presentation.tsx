@@ -10,7 +10,7 @@ const Presentation: React.FC<{}> = () => {
     <div className="w-screen grid sm:grid-cols-2 gap-8">
       <div className="col-start-0 mx-auto" data-aos="fade-left">
         <div className="h-64 w-64 xl:h-72 xl:w-72 2xl:h-80 2xl:w-80 shadow-[1rem_-1rem] shadow-purple-500 relative">
-          <Image src="/images/photo.jpg" alt={process.env.name} layout="fill" />
+          <Image src="images/photo.jpg" alt={process.env.name} layout="fill" />
         </div>
       </div>
       <section

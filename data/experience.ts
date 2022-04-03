@@ -4,7 +4,7 @@ const softeca = {
   company: 'QDQ media',
   from: '2020-03-01',
   website: 'https://www.qdqmedia.com/',
-  logo: '/images/experience/qdqmedia.webp',
+  logo: 'images/experience/qdqmedia.webp',
 };
 
 const qdqMedia = {
@@ -12,12 +12,12 @@ const qdqMedia = {
   from: '2019-01-01',
   to: '2020-01-31',
   website: 'http://www.softeca.es/',
-  logo: '/images/experience/softeca.svg',
+  logo: 'images/experience/softeca.svg',
 };
 
 const ubu = {
   website: 'https://www.ubu.es/',
-  logo: '/images/experience/ubu.png',
+  logo: 'images/experience/ubu.png',
 };
 
 const ubuMaster = {
