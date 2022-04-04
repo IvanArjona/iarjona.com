@@ -6,8 +6,16 @@ const customImageLoader: ImageLoader = (props: ImageLoaderProps): string => {
     return `${props.src}?width=${props.width}`;
   }
 
-  const quality = props.quality ? props.quality : 75;
-  const transformations = [`w_${props.width}`, `q_${quality || 'auto'}`, 'c_limit'].join(',');
+  const format = props.src.split('.').pop();
+  if (format === 'svg') {
+    return props.src;
+  }
+
+  const transformations = [
+    `w_${props.width}`,
+    `q_${props.quality || 'auto'}`,
+    'c_limit',
+  ].join(',');
   return `${props.config.path}${props.src}?tx=${transformations}`;
 };
 
