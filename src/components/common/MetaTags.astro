@@ -1,0 +1,81 @@
+---
+import { AstroSeo } from '@astrolib/seo';
+import { GoogleAnalytics } from '@astrolib/analytics';
+import { HeadHrefLangs } from 'astro-i18next/components';
+import config from '~/config';
+import type { MetaSEO } from '~/types';
+import { getRelativeUrlByFilePath } from '~/utils/directories';
+import { getCanonical } from '~/utils/permalinks';
+
+export interface Props extends MetaSEO {
+  dontUseTitleTemplate?: boolean;
+}
+const defaultImage = null;
+
+const {
+  title = '',
+  description = '',
+  image: _image = defaultImage,
+  canonical = getCanonical(String(Astro.url.pathname)),
+  noindex = false,
+  nofollow = false,
+  ogTitle = title,
+  ogType = 'website',
+  dontUseTitleTemplate = false,
+} = Astro.props;
+
+const image =
+  typeof _image === 'string'
+    ? new URL(_image, Astro.site)
+    : _image && typeof _image['src'] !== 'undefined'
+    ? // @ts-ignore
+      new URL(getRelativeUrlByFilePath(_image.src), Astro.site)
+    : null;
+
+const seo = {
+  title: title,
+  titleTemplate: dontUseTitleTemplate ? '%s' : `%s — ${config.fullName}`,
+  description: description,
+  canonical: String(canonical),
+  noindex: noindex,
+  nofollow: nofollow,
+  openGraph: {
+    url: String(canonical),
+    title: ogTitle,
+    description: description,
+    type: ogType,
+    images: image
+      ? [
+          {
+            url: image.toString(),
+            alt: ogTitle,
+          },
+        ]
+      : undefined,
+    // site_name: 'SiteName',
+  },
+  twitter: {
+    // handle: '@handle',
+    // site: '@site',
+    cardType: image ? 'summary_large_image' : undefined,
+  },
+  additionalLinkTags: [
+    {
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/favicon.ico',
+    },
+  ],
+};
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<AstroSeo {...seo} />
+
+<!-- Google Analytics -->
+{config.googleAnalyticsId && <GoogleAnalytics id={config.googleAnalyticsId} partytown={true} />}
+
+<!-- i18n -->
+<HeadHrefLangs />
