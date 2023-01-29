@@ -72,17 +72,14 @@ const image = await findImage(entry.data.image);
       {entry.data.name}
     </h3>
     <hr class="mt-2 mb-4 border-gray-200 dark:border-gray-500" />
-    <Content />
-    <!-- {entry.body.map((paragraph, paragraphIndex) => (
-      <p
-        class="leading-relaxed"
-        data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'}
-        data-aos-delay={`${paragraphIndex + 6}00`}
-        data-aos-duration="800"
-      >
-        {paragraph}
-      </p>
-    ))} -->
+    <div
+      class="leading-relaxed"
+      data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'}
+      data-aos-delay="600"
+      data-aos-duration="800"
+    >
+      <Content />
+  </div>
     <div class="flex flex-row gap-4 mt-4 flex-wrap">
       {
         entry.data.tags.map((tag, tagIndex) => (
