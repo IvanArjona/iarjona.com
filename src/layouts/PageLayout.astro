@@ -1,0 +1,41 @@
+---
+import '~/assets/styles/base.css';
+
+import Layout from '~/layouts/BaseLayout.astro';
+import Navbar from '~/components/widgets/Navbar.astro';
+import Footer from '~/components/widgets/Footer.astro';
+import BasicScripts from '~/components/common/BasicScripts.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<Layout
+  title={title}
+  description={description}
+  class="bg-yellow-500 dark:bg-purple-900 text-gray-100 overflow-x-hidden"
+>
+  <slot name="navbar">
+    <Navbar />
+  </slot>
+
+  <main>
+    <slot />
+  </main>
+
+  <slot name="footer">
+    <Footer />
+  </slot>
+
+  <BasicScripts />
+
+  <script>
+    import AOS from 'aos';
+    import 'aos/dist/aos.css';
+    AOS.init();
+  </script>
+</Layout>

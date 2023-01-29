@@ -1,0 +1,30 @@
+---
+import i18next from 'i18next';
+import { HeadHrefLangs } from 'astro-i18next/components';
+
+export interface Props {
+  title: string;
+  description: string;
+  class?: string;
+}
+
+const language = i18next.language;
+
+const { title, description, class: className } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang={language}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <HeadHrefLangs />
+  </head>
+
+  <body class={className}>
+    <slot />
+  </body>
+</html>

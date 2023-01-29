@@ -1,0 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  content-visibility: auto;
+}

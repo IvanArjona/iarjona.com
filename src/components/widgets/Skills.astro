@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import { t } from 'i18next';
+import Title from '../common/Title.astro';
+import SkillGroup from './SkillGroup.astro';
+
+const skills = await getCollection('skills');
+---
+
+<div id="skills" class="py-28">
+  <Title>
+    {t('skills')}
+  </Title>
+  <div class="container mx-auto">
+    <div class="m-8 md:my-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-12">
+      {skills.map((entry) => <SkillGroup group={entry} />)}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+---
+const line =
+  'h-1 w-9 my-1 rounded-full bg-white transition ease transform duration-300 group-hover:opacity-80 group-hover:scale-125';
+---
+
+<div id="menu-hamburguer" class="flex flex-col justify-center group pr-4 cursor-pointer">
+  <span class={line}></span>
+  <span class={line}></span>
+  <span class={line}></span>
+</div>
+
+<style>
+  #menu-hamburguer.open span:nth-child(1) {
+    @apply rotate-45;
+    @apply translate-y-3;
+  }
+  #menu-hamburguer.open span:nth-child(2) {
+    @apply opacity-0;
+  }
+  #menu-hamburguer.open span:nth-child(3) {
+    @apply -rotate-45;
+    @apply -translate-y-3;
+  }
+</style>

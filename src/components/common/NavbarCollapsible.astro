@@ -1,0 +1,64 @@
+---
+import { t } from 'i18next';
+import ThemeSwitch from './ThemeSwitch.astro';
+import type { Navigation } from '~/types';
+import Socials from './Socials.astro';
+import NavbarCollapsibleHamburguer from './NavbarCollapsibleHamburguer.astro';
+
+interface Props {
+  navigation: Navigation;
+}
+
+const { navigation } = Astro.props;
+---
+
+<nav class="fixed z-40 w-full bg-black bg-opacity-20">
+  <div class="relative container mx-auto flex justify-between z-10 p-4">
+    <ThemeSwitch />
+    <NavbarCollapsibleHamburguer />
+  </div>
+
+  <div id="nav" class="absolute top-0 h-screen w-screen bg-amber-500 dark:bg-red-500" hidden>
+    <div class="pt-24 p-8 h-full flex flex-col justify-between">
+      <ul class="flex flex-col items-center gap-8 tall:gap-20 my-auto">
+        {
+          navigation.map((item, index) => (
+            <li>
+              <a
+                href={item.href}
+                class="text-3xl hover:underline underline-offset-2 decoration-purple-500 tracking-wide px-3 py-2 rounded-md font-medium"
+                data-aos="zoom-in"
+                data-aos-delay={`${index + 1}00`}
+                data-aos-duration="700"
+              >
+                {t(item.name)}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <Socials />
+    </div>
+  </div>
+</nav>
+
+<script>
+  const hamburguer = document.getElementById('menu-hamburguer')!;
+  const nav = document.getElementById('nav')!;
+  const links = document.querySelectorAll('#nav li a');
+
+  function toggleNavbar() {
+    if (nav.hidden) {
+      hamburguer.classList.add('open');
+    } else {
+      hamburguer.classList.remove('open');
+    }
+    nav.hidden = !nav.hidden;
+  }
+
+  hamburguer.addEventListener('click', toggleNavbar);
+
+  links.forEach((link) => {
+    link.addEventListener('click', toggleNavbar);
+  });
+</script>

@@ -1,0 +1,19 @@
+---
+import { t } from 'i18next';
+import Title from '../common/Title.astro';
+import ProjectItem from '../common/ProjectItem.astro';
+import { translatedCollection } from '~/utils/locale';
+import { getCollection } from 'astro:content';
+
+// @ts-ignore
+const projects = await getCollection('projects', translatedCollection);
+---
+
+<div id="projects" class="px-8 py-28">
+  <Title>
+    {t('projects')}
+  </Title>
+  <div class="container mx-auto mt-12 flex flex-col gap-28">
+    {projects.map((item, index) => <ProjectItem entry={item} index={index} />)}
+  </div>
+</div>
