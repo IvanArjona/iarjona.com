@@ -5,3 +5,8 @@ html {
 img {
   content-visibility: auto;
 }
+
+.hide {
+  opacity: 0;
+  pointer-events: none;
+}

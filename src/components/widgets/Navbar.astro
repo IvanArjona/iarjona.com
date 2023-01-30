@@ -8,7 +8,7 @@ import { navigation } from '~/data';
 <div id="fixed-navbar">
   <NavbarFixed navigation={navigation} />
 </div>
-<div id="collapsible-navbar" class="opacity-0 transition-opacity absolute -top-24">
+<div id="collapsible-navbar" class="absolute hide transition-opacity duration-500">
   <NavbarCollapsible navigation={navigation} />
 </div>
 
@@ -24,12 +24,10 @@ import { navigation } from '~/data';
 
     if (!isCollapsible && (height > COLLAPSE_HEIGHT || width < COLLAPSE_WIDTH)) {
       isCollapsible = true;
-      collapsibleNavbar.classList.remove('absolute', '-top-24');
-      collapsibleNavbar.classList.remove('opacity-0');
+      collapsibleNavbar.classList.remove('hide');
     } else if (isCollapsible && height <= COLLAPSE_HEIGHT && width >= COLLAPSE_WIDTH) {
       isCollapsible = false;
-      collapsibleNavbar.classList.add('opacity-0');
-      collapsibleNavbar.classList.add('absolute', '-top-24');
+      collapsibleNavbar.classList.add('hide');
     }
   }
 
