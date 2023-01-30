@@ -2,6 +2,7 @@
 name: Cloudflare Tunnel for VSCode
 github: https://github.com/IvanArjona/cloudflare-tunnel-vscode
 link: https://marketplace.visualstudio.com/items?itemName=IvanArjona.cloudflaretunnel
+linkText: Marketplace
 image: ~/assets/images/projects/cloudflare-tunnel-for-vscode.gif
 width: 1018
 height: 775

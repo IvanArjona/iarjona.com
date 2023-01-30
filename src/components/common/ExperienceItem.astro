@@ -29,7 +29,7 @@ const image = entry.data.logo;
     <div class="float-right m-2 p-2 rounded dark:bg-gray-200">
       {
         image.endsWith('.svg') ? (
-          <img src={image} width={64} />
+          <img src={image} width={64} alt={entry.data.company} />
         ) : (
           <Picture
             src={await findImage(image)}
