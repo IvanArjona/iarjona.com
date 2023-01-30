@@ -10,10 +10,9 @@ interface Skill {
 export interface Props {
   skill: Skill;
   hide: boolean;
-  index: number;
 }
 
-const { skill, hide, index } = Astro.props;
+const { skill, hide } = Astro.props;
 ---
 
 <div
@@ -21,8 +20,6 @@ const { skill, hide, index } = Astro.props;
     hide ? 'hidden lg:flex' : ''
   }`}
   data-aos="zoom-in"
-  data-aos-delay={`${index + 2}00`}
-  data-aos-duration="500"
 >
   <Icon pack={skill.pack} name={skill.icon} class="h-10 w-10" />
   {skill.name}

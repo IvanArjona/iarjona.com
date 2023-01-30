@@ -14,6 +14,6 @@ const { group } = Astro.props;
     {group.data.name}
   </h3>
   <div class="my-4 flex flex-col justify-center gap-4">
-    {group.data.skills.map((skill, index) => <SkillsGroupItem skill={skill} hide={false} index={index} />)}
+    {group.data.skills.map((skill) => <SkillsGroupItem skill={skill} hide={false} />)}
   </div>
 </div>
