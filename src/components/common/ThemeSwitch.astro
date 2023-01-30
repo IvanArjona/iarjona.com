@@ -7,8 +7,14 @@ import Icon from 'astro-iconify';
   <span class="sr-only">{t('switch-theme')}</span>
   <Icon
     pack="tabler"
+    name="moon"
+    class="h-6 w-6 hover:opacity-80 hover:scale-125 transition ease transform duration-300 hidden dark:block"
+    aria-hidden="true"
+  />
+  <Icon
+    pack="tabler"
     name="sun"
-    class="h-6 w-6 hover:opacity-80 hover:scale-125 transition ease transform duration-300"
+    class="h-6 w-6 hover:opacity-80 hover:scale-125 transition ease transform duration-300 dark:hidden"
     aria-hidden="true"
   />
 </button>
