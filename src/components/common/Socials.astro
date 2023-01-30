@@ -3,7 +3,7 @@ import Icon from 'astro-iconify';
 import { socials } from '~/data';
 ---
 
-<div class="short:absolute short:right-4 short:bottom-8 flex short:flex-col justify-center gap-2 pt-2">
+<div class="socials short:absolute short:right-4 short:bottom-8 flex short:flex-col justify-center gap-2 pt-2">
   {
     socials.map(({ title, pack, icon, href }, index) => (
       <a
@@ -14,6 +14,7 @@ import { socials } from '~/data';
         data-aos="zoom-in"
         data-aos-delay={`${index + 2}00`}
         data-aos-duration="500"
+        data-aos-anchor=".socials"
       >
         <Icon
           pack={pack}

@@ -47,6 +47,7 @@ const { navigation } = Astro.props;
   let isOpen = false;
 
   function toggleNavbar() {
+    isOpen = !isOpen;
     if (isOpen) {
       nav.classList.remove('hide');
       hamburguer.classList.add('open');
@@ -54,7 +55,6 @@ const { navigation } = Astro.props;
       nav.classList.add('hide');
       hamburguer.classList.remove('open');
     }
-    isOpen = !isOpen;
   }
 
   hamburguer.addEventListener('click', toggleNavbar);
