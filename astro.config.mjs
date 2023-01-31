@@ -11,9 +11,6 @@ import compress from 'astro-compress';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const whenExternalScripts = (items = []) =>
-  config.googleAnalyticsId ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
-
 export default defineConfig({
   site: config.origin,
 
@@ -32,11 +29,9 @@ export default defineConfig({
       serviceEntryPoint: '@astrojs/image/sharp',
     }),
     tailwind(),
-    ...whenExternalScripts(() =>
-      partytown({
-        config: { forward: ['dataLayer.push'] },
-      })
-    ),
+    partytown({
+      config: { forward: ['dataLayer.push'] },
+    }),
     compress(),
   ],
 
