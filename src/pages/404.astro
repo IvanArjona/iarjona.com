@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/PageLayout.astro';
+
+const path = Astro.url.pathname;
+
+const meta = {
+  title: '404: Not found',
+  description: '404: Not found',
+  noindex: true,
+  nofollow: true,
+};
+---
+
+<Layout {meta}>
+  <div class="grid h-screen place-items-center font-mono font-bold leading-6">
+    <div class="grid gap-3 place-items-center">
+      <h1 class="gap-8">
+        <span class="text-4xl text-orange-500">404|</span>
+        <span class="text-2xl">Not found</span>
+      </h1>
+      <pre>Path: {path}</pre>
+    </div>
+  </div>
+</Layout>

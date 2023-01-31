@@ -1,0 +1,31 @@
+---
+import { t } from 'i18next';
+import Icon from 'astro-iconify';
+---
+
+<button type="button" class="p-4" title={t('switch-theme')} aria-label={t('switch-theme')} data-toggle-color-scheme>
+  <span class="sr-only">{t('switch-theme')}</span>
+  <Icon
+    pack="tabler"
+    name="moon"
+    class="h-6 w-6 hover:opacity-80 hover:scale-125 transition ease transform duration-300 hidden dark:block"
+    aria-hidden="true"
+  />
+  <Icon
+    pack="tabler"
+    name="sun"
+    class="h-6 w-6 hover:opacity-80 hover:scale-125 transition ease transform duration-300 dark:hidden"
+    aria-hidden="true"
+  />
+</button>
+
+<script>
+  const buttons = document.querySelectorAll('[data-toggle-color-scheme]');
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    });
+  });
+</script>

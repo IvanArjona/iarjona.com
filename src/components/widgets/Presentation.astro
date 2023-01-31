@@ -1,0 +1,46 @@
+---
+import { t } from 'i18next';
+import { Picture } from '@astrojs/image/components';
+import Socials from '../common/Socials.astro';
+import photo from '~/assets/images/photo.jpg';
+import config from '~/config';
+
+const name = config.name;
+---
+
+<div class="w-screen grid sm:grid-cols-2 gap-8">
+  <div class="col-start-0 mx-auto" data-aos="fade-left">
+    <div class="h-64 w-64 xl:h-72 xl:w-72 2xl:h-80 2xl:w-80 shadow-[1rem_-1rem] shadow-purple-500 relative">
+      <Picture
+        src={photo}
+        alt={name}
+        widths={[256, 320, 512]}
+        sizes="(max-width: 1280px) 256px, (max-width: 1536px) 320px, 512px"
+        aspectRatio="1:1"
+        background={undefined}
+      />
+    </div>
+  </div>
+  <section
+    class="-mt-20 sm:mt-auto z-10 sm:order-first sm:row-span-2 w-min mx-auto flex flex-col gap-2 md:gap-4"
+    data-aos="fade-right"
+    data-aos-duration="800"
+  >
+    <h1 class="uppercase font-bold text-5xl md:text-7xl xl:text-9xl">
+      {name}
+    </h1>
+    <div>
+      <span class="block bg-purple-500 h-1 w-16 md:w-28 rounded-lg ml-2"></span>
+      <span class="block bg-purple-500 h-1 w-16 md:w-28 rounded-lg mt-1 ml-14 md:ml-24"></span>
+    </div>
+    <h2 class="font-mono md:text-xl lg:text-2xl xl:text-3xl">
+      <span class="block" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="700">
+        {t('title-1')}
+      </span>
+      <span class="ml-4" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="900">
+        {t('title-2')}
+      </span>
+    </h2>
+  </section>
+  <Socials />
+</div>

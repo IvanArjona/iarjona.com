@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/PageLayout.astro';
+import { t } from 'i18next';
+import { getLanguages, changeLanguage } from '~/utils/locale';
+import Contact from '~/components/widgets/Contact.astro';
+import Separator from '~/components/common/Separator.astro';
+import Skills from '~/components/widgets/Skills.astro';
+import Projects from '~/components/widgets/Projects.astro';
+import Experience from '~/components/widgets/Experience.astro';
+import FullPage from '~/components/common/FullPage.astro';
+import Presentation from '~/components/widgets/Presentation.astro';
+import config from '~/config';
+
+export async function getStaticPaths() {
+  const languages = await getLanguages();
+  return [...languages.map((lang) => ({ params: { lang } })), { params: { lang: undefined } }];
+}
+
+changeLanguage(Astro.params.lang);
+
+const meta = {
+  title: `${config.fullName} - ${t('title-1')} ${t('title-2')}`,
+  description: `${t('title-1')} ${t('title-2')}`,
+};
+---
+
+<Layout {meta}>
+  <FullPage next="experience">
+    <Presentation />
+  </FullPage>
+  <Separator />
+  <Experience />
+  <Separator />
+  <Projects />
+  <Separator />
+  <Skills />
+  <Separator />
+  <Contact />
+</Layout>

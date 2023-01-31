@@ -1,0 +1,42 @@
+---
+import { t } from 'i18next';
+import Icon from 'astro-iconify';
+import ContactFormInput from './ContactFormInput.astro';
+import config from '~/config';
+
+const email = config.email;
+---
+
+<form
+  action={`https://formsubmit.co/${email}`}
+  method="POST"
+  class="grid grid-cols-2 md:grid-cols-3 gap-8 m-8"
+  data-aos="flip-up"
+>
+  <div class="col-span-2 md:col-span-1 row-span-1 md:row-span-3 flex flex-col items-center justify-center gap-2">
+    <Icon name="tabler:mail" class="h-12 w-12" />
+    <span class="text-sm tracking-wide">
+      {t('email-me-at')}
+    </span>
+    <a href={`mailto:${email}`} target="_blank" rel="noreferrer" class="font-mono text-purple-600 dark:text-yellow-400">
+      {email}
+    </a>
+  </div>
+  <ContactFormInput name="name" label={t('name')} type="text" />
+  <ContactFormInput name="email" label={t('email')} type="email" />
+  <div class="col-span-2">
+    <ContactFormInput name="_subject" label={t('subject')} type="text" minLength={8} />
+  </div>
+  <div class="col-span-2">
+    <ContactFormInput input="textarea" name="message" label={t('message')} minLength={20} rows={10} />
+  </div>
+  <div class="col-span-2 md:col-span-3 text-right">
+    <button
+      type="submit"
+      class="font-bold rounded-lg text-sm px-6 py-3 text-center text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 dark:focus:ring-purple-900"
+    >
+      {t('send-message')}
+      <Icon name="tabler:send" class="inline ml-2 h-6 w-6" />
+    </button>
+  </div>
+</form>
