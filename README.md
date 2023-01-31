@@ -1,4 +1,3 @@
-
 <div align="center">
     <h1>
       <a href="https://iarjona.com">
@@ -11,27 +10,18 @@
     <br>
 </div>
 
-## Project setup
 
-```bash
-npm install
-```
+## 🧞 Commands
 
-## Run development server
+All commands are run from the root of the project, from a terminal:
 
-```bash
-npm run dev
-```
-
-## Deploy for production
-
-```bash
-next build && next export
-```
-
-## Built with
-- ReactJS
-- NextJS
-- Tailwind
-- Cloudflare Pages
-- Cloudinary
+| Command                | Action                                             |
+| :--------------------- | :------------------------------------------------- |
+| `npm install`          | Installs dependencies                              |
+| `npm run dev`          | Starts local dev server at `localhost:3000`        |
+| `npm run build`        | Build your production site to `./dist/`            |
+| `npm run preview`      | Preview your build locally, before deploying       |
+| `npm run format`       | Code formatting with prettier                      |
+| `npm run lint`         | Run eslint                                         |
+| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
+| `npm run astro --help` | Get help using the Astro CLI                       |

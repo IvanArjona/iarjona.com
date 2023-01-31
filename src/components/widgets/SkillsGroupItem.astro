@@ -1,0 +1,26 @@
+---
+import Icon from 'astro-iconify';
+
+interface Skill {
+  name: string;
+  pack: string;
+  icon: string;
+}
+
+export interface Props {
+  skill: Skill;
+  hide: boolean;
+}
+
+const { skill, hide } = Astro.props;
+---
+
+<div
+  class={`bg-gray-800 text-white fill-white p-4 flex gap-2 justify-center place-items-center hover:scale-105 transition-transform ${
+    hide ? 'hidden lg:flex' : ''
+  }`}
+  data-aos="zoom-in"
+>
+  <Icon pack={skill.pack} name={skill.icon} class="h-10 w-10" />
+  {skill.name}
+</div>

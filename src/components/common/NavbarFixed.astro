@@ -1,0 +1,36 @@
+---
+import { t } from 'i18next';
+import LanguageSwitch from './LanguageSwitch.astro';
+import ThemeSwitch from './ThemeSwitch.astro';
+import type { Navigation } from '~/types';
+
+interface Props {
+  navigation: Navigation;
+}
+
+const { navigation } = Astro.props;
+---
+
+<nav class="absolute w-full hidden md:block">
+  <ul class="h-16 container mx-auto flex gap-8 place-items-center justify-evenly p-4">
+    {
+      navigation.map((item, index) => (
+        <li>
+          <a
+            href={item.href}
+            class="hover:underline underline-offset-2 decoration-purple-500 tracking-wide px-3 py-2 rounded-md font-medium"
+            data-aos="zoom-in"
+            data-aos-delay={`${index + 1}00`}
+            data-aos-duration="700"
+          >
+            {t(item.name)}
+          </a>
+        </li>
+      ))
+    }
+    <li class="flex items-center">
+      <LanguageSwitch />
+      <ThemeSwitch />
+    </li>
+  </ul>
+</nav>

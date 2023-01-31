@@ -1,0 +1,20 @@
+---
+import Icon from 'astro-iconify';
+
+export interface Props {
+  next?: string;
+}
+
+const { next } = Astro.props;
+---
+
+<div class="flex justify-center items-center h-screen">
+  <slot />
+  {
+    next && (
+      <a href={`#${next}`} class="absolute bottom-2 md:bottom-10 lg:bottom-20 p-2" aria-label={next}>
+        <Icon name="tabler:chevron-down" class="h-20 w-20 animate-bounce" aria-hidden="true" />
+      </a>
+    )
+  }
+</div>

@@ -1,0 +1,27 @@
+---
+import Icon from 'astro-iconify';
+import { socials } from '~/data';
+---
+
+<div class="socials short:absolute short:right-4 short:bottom-8 flex short:flex-col justify-center gap-2 pt-2">
+  {
+    socials.map(({ title, pack, icon, href }, index) => (
+      <a
+        href={href}
+        title={title}
+        target="_blank"
+        rel="noreferrer"
+        data-aos="zoom-in"
+        data-aos-delay={`${index + 2}00`}
+        data-aos-duration="500"
+        data-aos-anchor-placement="bottom-bottom"
+      >
+        <Icon
+          pack={pack}
+          name={icon}
+          class="h-10 w-10 2xl:h-14 2xl:w-14 m-2 fill-white hover:fill-purple-500 transition-colors duration-300"
+        />
+      </a>
+    ))
+  }
+</div>

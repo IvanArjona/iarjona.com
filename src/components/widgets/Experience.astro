@@ -1,0 +1,26 @@
+---
+import { t } from 'i18next';
+import { getCollection } from 'astro:content';
+import ExperienceItem from '~/components/common/ExperienceItem.astro';
+import Title from '../common/Title.astro';
+import { translatedCollection } from '~/utils/locale';
+
+// @ts-ignore
+const experienceList = await getCollection('experience', translatedCollection);
+experienceList.sort((item1, item2) => item2.data.fromDate.valueOf() - item1.data.fromDate.valueOf());
+---
+
+<div id="experience" class="py-28 bg-emerald-500 dark:bg-black">
+  <Title>
+    {t('experience')}
+  </Title>
+  <div class="container mx-auto">
+    <div class="relative wrap overflow-hidden p-10">
+      <div
+        class="border-2-2 absolute border-opacity-20 border-purple-600 border-dashed dark:border-yellow-500 h-full border ml-4 lg:ml-0 lg:left-1/2"
+      >
+      </div>
+      {experienceList.map((item, index) => <ExperienceItem entry={item} index={index} />)}
+    </div>
+  </div>
+</div>

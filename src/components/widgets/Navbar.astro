@@ -1,0 +1,37 @@
+---
+import NavbarCollapsible from '../common/NavbarCollapsible.astro';
+import NavbarFixed from '../common/NavbarFixed.astro';
+
+import { navigation } from '~/data';
+---
+
+<div id="fixed-navbar">
+  <NavbarFixed navigation={navigation} />
+</div>
+<div id="collapsible-navbar" class="absolute hide transition-opacity duration-500">
+  <NavbarCollapsible navigation={navigation} />
+</div>
+
+<script>
+  const COLLAPSE_WIDTH = 768;
+  const COLLAPSE_HEIGHT = 40;
+  const collapsibleNavbar = document.getElementById('collapsible-navbar')!;
+  let isCollapsible = false;
+
+  function toggleNavbars() {
+    const height = window.pageYOffset;
+    const width = window.innerWidth;
+
+    if (!isCollapsible && (height > COLLAPSE_HEIGHT || width < COLLAPSE_WIDTH)) {
+      isCollapsible = true;
+      collapsibleNavbar.classList.remove('hide');
+    } else if (isCollapsible && height <= COLLAPSE_HEIGHT && width >= COLLAPSE_WIDTH) {
+      isCollapsible = false;
+      collapsibleNavbar.classList.add('hide');
+    }
+  }
+
+  window.addEventListener('scroll', toggleNavbars);
+  window.addEventListener('resize', toggleNavbars);
+  toggleNavbars();
+</script>
