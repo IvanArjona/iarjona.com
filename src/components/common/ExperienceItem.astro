@@ -29,15 +29,14 @@ const image = entry.data.logo;
     <div class="float-right m-2 p-2 rounded dark:bg-gray-200">
       {
         image.endsWith('.svg') ? (
-          <img src={image} width={64} alt={entry.data.company} />
+          <img src={image} width={64} height={64} alt={entry.data.company} />
         ) : (
           <Picture
             src={await findImage(image)}
-            width={64}
+            alt={entry.data.company}
             widths={[64]}
             sizes="64px"
             aspectRatio="1:1"
-            alt={entry.data.company}
             background={undefined}
           />
         )
