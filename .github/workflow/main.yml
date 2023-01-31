@@ -1,5 +1,5 @@
 name: CI
-on: push
+on: [push]
 
 env:
   NODE_VERSION: 16
@@ -8,13 +8,8 @@ jobs:
   linting:
     runs-on: ubuntu-latest
     steps:
-    - name: Instrall Node
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v2
       with:
         node-version: ${{ env.NODE_VERSION }}
-
-    - name: Install modules
-      run: npm ci
-
-    - name: Run linting
-      run: npm run lint
+    - run: npm ci
+    - run: npm run lint
