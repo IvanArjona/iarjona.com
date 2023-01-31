@@ -7,6 +7,7 @@ import { translatedCollection } from '~/utils/locale';
 
 // @ts-ignore
 const experienceList = await getCollection('experience', translatedCollection);
+experienceList.sort((item1, item2) => item2.data.fromDate.valueOf() - item1.data.fromDate.valueOf());
 ---
 
 <div id="experience" class="py-28 bg-emerald-500 dark:bg-black">
