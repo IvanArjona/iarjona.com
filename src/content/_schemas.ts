@@ -6,7 +6,8 @@ export const experienceSchema = z.object({
   fromDate: z.date(),
   toDate: z.date().optional(),
   website: z.string().url(),
-  logo: z.string(),
+  logo: z.string().optional(),
+  icon: z.string().optional(),
 });
 
 export const projectsSchema = z.object({
