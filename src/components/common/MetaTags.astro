@@ -1,11 +1,11 @@
 ---
 import { AstroSeo } from '@astrolib/seo';
-import { GoogleAnalytics } from '@astrolib/analytics';
 import { HeadHrefLangs } from 'astro-i18next/components';
 import config from '~/config';
 import type { MetaSEO } from '~/types';
 import { getRelativeUrlByFilePath } from '~/utils/directories';
 import { getCanonical } from '~/utils/permalinks';
+import GoogleAnalytics from './GoogleAnalytics.astro';
 
 export interface Props extends MetaSEO {
   dontUseTitleTemplate?: boolean;
@@ -73,9 +73,5 @@ const seo = {
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <AstroSeo {...seo} />
-
-<!-- Google Analytics -->
-{config.googleAnalyticsId && <GoogleAnalytics id={config.googleAnalyticsId} partytown={true} />}
-
-<!-- i18n -->
+<GoogleAnalytics />
 <HeadHrefLangs />

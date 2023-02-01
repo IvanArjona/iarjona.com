@@ -1,0 +1,22 @@
+---
+import config from '~/config';
+
+const googleAnalyticsId = config.googleAnalyticsId;
+---
+
+{
+  googleAnalyticsId && (
+    <>
+      <script
+        is:inline
+        type="text/partytown"
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+      />
+      <script is:inline type="text/partytown" define:vars={{ googleAnalyticsId }}>
+        window.dataLayer = window.dataLayer || []; function gtag() {window.dataLayer.push(arguments)}
+        gtag('js', new Date()); gtag('config', googleAnalyticsId);
+      </script>
+    </>
+  )
+}
