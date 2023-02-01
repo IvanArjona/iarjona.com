@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import { Picture } from '@astrojs/image/components';
 import { formatDate } from '~/utils/dates';
 import { findImage } from '~/utils/images';
+import { Icon } from 'astro-iconify';
 
 interface Props {
   entry: CollectionEntry<'experience'>;
@@ -14,7 +15,6 @@ const { entry, index } = Astro.props;
 
 const fromDate = formatDate(entry.data.fromDate);
 const toDate = formatDate(entry.data.toDate) || t('now');
-const image = entry.data.logo;
 ---
 
 <div class={`my-12 flex justify-between items-center ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
@@ -28,11 +28,9 @@ const image = entry.data.logo;
   >
     <div class="float-right m-2 p-2 rounded dark:bg-gray-200">
       {
-        image.endsWith('.svg') ? (
-          <img src={image} width={64} height={64} alt={entry.data.company} />
-        ) : (
+        entry.data.logo && (
           <Picture
-            src={await findImage(image)}
+            src={await findImage(entry.data.logo)}
             alt={entry.data.company}
             widths={[64]}
             sizes="64px"
@@ -41,6 +39,7 @@ const image = entry.data.logo;
           />
         )
       }
+      {entry.data.icon && <Icon name={entry.data.icon} width="64" height="64" />}
     </div>
     <div class="text-sm capita text-purple-500 dark:text-yellow-300">
       <time datetime={entry.data.fromDate.toISOString()}>{fromDate}</time>

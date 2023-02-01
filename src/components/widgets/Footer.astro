@@ -1,7 +1,7 @@
 ---
 import config from '~/config';
 import { socials } from '~/data';
-import { Icon } from 'astro-iconify';
+import { Sprite } from 'astro-iconify';
 
 const fullName = config.fullName;
 ---
@@ -15,7 +15,7 @@ const fullName = config.fullName;
       {
         socials.map(({ title, pack, icon, href }) => (
           <a href={href} title={title} target="_blank" rel="noreferrer" class="p-2">
-            <Icon
+            <Sprite
               pack={pack}
               name={icon}
               class="h-6 w-6 fill-white hover:fill-purple-500 transition-colors duration-300"

@@ -32,7 +32,15 @@ export default defineConfig({
     partytown({
       config: { forward: ['dataLayer.push'] },
     }),
-    compress(),
+    compress({
+      css: true,
+      html: {
+        removeAttributeQuotes: false,
+      },
+      img: true,
+      js: true,
+      svg: true,
+    }),
   ],
 
   vite: {
