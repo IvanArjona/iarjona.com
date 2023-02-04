@@ -1,21 +1,28 @@
 ---
-import { AstroSeo } from '@astrolib/seo';
+import { SEO } from 'astro-seo';
 import { HeadHrefLangs } from 'astro-i18next/components';
 import config from '~/config';
 import type { MetaSEO } from '~/types';
 import { getRelativeUrlByFilePath } from '~/utils/directories';
 import { getCanonical } from '~/utils/permalinks';
 import GoogleAnalytics from './GoogleAnalytics.astro';
+import { getImage } from '@astrojs/image';
 
 export interface Props extends MetaSEO {
   dontUseTitleTemplate?: boolean;
 }
-const defaultImage = null;
+
+const defaultImage = await getImage({
+  src: config.defaultImage,
+  alt: config.name,
+  width: 512,
+  height: 512,
+});
 
 const {
   title = '',
   description = '',
-  image: _image = defaultImage,
+  image: _image = defaultImage.src,
   canonical = getCanonical(String(Astro.url.pathname)),
   noindex = false,
   nofollow = false,
@@ -33,45 +40,48 @@ const image =
     : null;
 
 const seo = {
-  title: title,
-  titleTemplate: dontUseTitleTemplate ? '%s' : `%s — ${config.fullName}`,
+  title: dontUseTitleTemplate ? title : `${title} - ${config.fullName}`,
   description: description,
   canonical: String(canonical),
   noindex: noindex,
   nofollow: nofollow,
+  charset: 'UTF-8',
   openGraph: {
-    url: String(canonical),
-    title: ogTitle,
-    description: description,
-    type: ogType,
-    images: image
-      ? [
-          {
-            url: image.toString(),
-            alt: ogTitle,
-          },
-        ]
-      : undefined,
-    // site_name: 'SiteName',
+    basic: {
+      title: ogTitle,
+      type: ogType,
+      image: image,
+      url: String(canonical),
+    },
+    optional: {
+      description: description,
+    },
   },
   twitter: {
-    // handle: '@handle',
-    // site: '@site',
-    cardType: image ? 'summary_large_image' : undefined,
+    title: title,
+    description: description,
+    card: 'summary',
+    image: image,
   },
-  additionalLinkTags: [
-    {
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico',
-    },
-  ],
+  extend: {
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico',
+      },
+    ],
+    meta: [
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1.0',
+      },
+    ],
+  },
 };
 ---
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<AstroSeo {...seo} />
+{/* @ts-ignore */}
+<SEO {...seo} />
 <GoogleAnalytics />
 <HeadHrefLangs />
