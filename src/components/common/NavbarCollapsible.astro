@@ -1,5 +1,6 @@
 ---
 import { t } from 'i18next';
+import { localizePath } from 'astro-i18next';
 import ThemeSwitch from './ThemeSwitch.astro';
 import type { Navigation } from '~/types';
 import Socials from './Socials.astro';
@@ -28,7 +29,7 @@ const { navigation } = Astro.props;
           navigation.map((item) => (
             <li>
               <a
-                href={item.href}
+                href={localizePath(item.href)}
                 class="text-3xl hover:underline underline-offset-2 decoration-purple-500 tracking-wide px-3 py-2 rounded-md font-medium"
               >
                 {t(item.name)}
