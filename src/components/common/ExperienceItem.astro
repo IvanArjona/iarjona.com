@@ -19,11 +19,11 @@ const image = await findImage(entry.data.logo);
 
 <div class={`my-12 flex justify-between items-center ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
   <div class="order-1 w-5/12 hidden lg:block"></div>
-  <div class="z-20 flex items-center order-1 bg-purple-800 dark:bg-yellow-400 shadow-xl w-8 h-8 rounded-full">
+  <div class="z-20 flex items-center order-1 bg-secondary-dark dark:bg-secondary shadow-xl w-8 h-8 rounded-full">
     <div class="mx-auto font-semibold text-lg text-white"></div>
   </div>
   <div
-    class="order-1 bg-gray-100 dark:bg-transparent rounded-lg shadow-xl w-10/12 lg:w-5/12 px-8 py-6"
+    class="order-1 bg-gray-100 dark:bg-opacity-10 rounded-lg shadow-xl w-10/12 lg:w-5/12 px-8 py-6"
     data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'}
   >
     <div class="float-right m-2 p-2 rounded dark:bg-gray-200">
@@ -36,7 +36,7 @@ const image = await findImage(entry.data.logo);
         background={undefined}
       />
     </div>
-    <div class="text-sm capita text-purple-500 dark:text-yellow-300">
+    <div class="text-sm capita text-secondary">
       <time datetime={entry.data.fromDate.toISOString()}>{fromDate}</time>
       -
       <time datetime={entry.data.toDate?.toISOString()}>{toDate}</time>
@@ -50,7 +50,7 @@ const image = await findImage(entry.data.logo);
     <p class="text-sm leading-snug tracking-wide text-opacity-100">
       {entry.body}
     </p>
-    <a href={entry.data.website} class="mt-2 mr-3 text-sm float-right text-purple-600 dark:text-yellow-300">
+    <a href={entry.data.website} class="mt-2 mr-3 text-sm float-right text-secondary">
       {entry.data.company}
     </a>
   </div>

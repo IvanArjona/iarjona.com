@@ -18,7 +18,7 @@ const email = config.email;
     <span class="text-sm tracking-wide">
       {t('email-me-at')}
     </span>
-    <a href={`mailto:${email}`} target="_blank" rel="noreferrer" class="font-mono text-purple-600 dark:text-yellow-400">
+    <a href={`mailto:${email}`} target="_blank" rel="noreferrer" class="font-mono text-secondary-dark">
       {email}
     </a>
   </div>
@@ -33,7 +33,7 @@ const email = config.email;
   <div class="col-span-2 md:col-span-3 text-right">
     <button
       type="submit"
-      class="font-bold rounded-lg text-sm px-6 py-3 text-center text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 dark:focus:ring-purple-900"
+      class="font-bold rounded-lg text-sm px-6 py-3 text-center text-white bg-secondary-dark hover:bg-secondary-darker focus:ring-4 focus:ring-secondary-light"
     >
       {t('send-message')}
       <Sprite name="tabler:send" class="inline ml-2 h-6 w-6" />

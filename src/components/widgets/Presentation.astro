@@ -10,7 +10,7 @@ const name = config.name;
 
 <div class="w-screen grid sm:grid-cols-2 gap-8">
   <div class="col-start-0 mx-auto" data-aos="fade-left">
-    <div class="h-64 w-64 xl:h-72 xl:w-72 2xl:h-80 2xl:w-80 shadow-[1rem_-1rem] shadow-purple-500 relative">
+    <div class="h-64 w-64 xl:h-72 xl:w-72 2xl:h-80 2xl:w-80 shadow-[1rem_-1rem] shadow-accent relative">
       <Picture
         src={photo}
         alt={name}
@@ -26,12 +26,12 @@ const name = config.name;
     data-aos="fade-right"
     data-aos-duration="800"
   >
-    <h1 class="uppercase font-bold text-5xl md:text-7xl xl:text-9xl">
+    <h1 class="uppercase font-bold text-5xl md:text-7xl xl:text-9xl text-primary-400 bg-accent-500 bg-primary-100">
       {name}
     </h1>
     <div>
-      <span class="block bg-purple-500 h-1 w-16 md:w-28 rounded-lg ml-2"></span>
-      <span class="block bg-purple-500 h-1 w-16 md:w-28 rounded-lg mt-1 ml-14 md:ml-24"></span>
+      <span class="block bg-accent h-1 w-16 md:w-28 rounded-lg ml-2"></span>
+      <span class="block bg-accent h-1 w-16 md:w-28 rounded-lg mt-1 ml-14 md:ml-24"></span>
     </div>
     <h2 class="font-mono md:text-xl lg:text-2xl xl:text-3xl">
       <span class="block" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="700">

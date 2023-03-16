@@ -1,6 +1,4 @@
 ---
-import '~/assets/styles/base.css';
-
 import Layout from '~/layouts/BaseLayout.astro';
 import Navbar from '~/components/widgets/Navbar.astro';
 import Footer from '~/components/widgets/Footer.astro';
@@ -13,7 +11,7 @@ export interface Props {
 const { meta = {} } = Astro.props;
 ---
 
-<Layout {meta} class="bg-yellow-500 dark:bg-purple-900 text-gray-100 overflow-x-hidden">
+<Layout {meta} class="bg-primary text-gray-100 overflow-x-hidden">
   <slot name="navbar">
     <Navbar />
   </slot>

@@ -1,0 +1,20 @@
+@layer base {
+  :root {
+    --color-primary: 234 179 8;
+    --color-secondary: 168 85 247;
+    --color-secondary-light: 192 132 252;
+    --color-secondary-dark: 126 34 206;
+    --color-secondary-darker: 107 33 168;
+    --color-terciary: 16 185 129;
+    --color-accent: 168 85 247;
+  }
+
+  :root.dark {
+    --color-primary: 88 28 135;
+    --color-secondary: 250 204 21;
+    --color-secondary-light: 253 224 71;
+    --color-secondary-dark: 234 179 8;
+    --color-secondary-darker: 202 138 4;
+    --color-terciary: 0 0 0;
+  }
+}
