@@ -1,4 +1,4 @@
-function applyTheme(theme: string) {
+export function applyTheme(theme: string) {
   if (theme === 'dark') {
     document.documentElement.classList.add('dark');
   } else {

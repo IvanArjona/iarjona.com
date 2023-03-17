@@ -23,6 +23,7 @@ const image = await findImage(entry.data.image);
     >
       <Image
         class="w-full h-full"
+        {/* @ts-ignore */}
         src={image}
         width={entry.data.width}
         height={entry.data.height}

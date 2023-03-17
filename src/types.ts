@@ -1,3 +1,5 @@
+import type { ImageMetadata } from '@astrojs/image/dist/vite-plugin-astro-image';
+
 export interface NavigationItem {
   name: string;
   href: string;
@@ -12,11 +14,7 @@ export interface SocialItem {
   href: string;
 }
 
-export interface Image {
-  src: string;
-  width: number;
-  height: number;
-  format: string;
+export interface Image extends ImageMetadata {
   (): Promise<ImageDefault>;
 }
 

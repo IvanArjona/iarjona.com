@@ -28,6 +28,7 @@ const image = await findImage(entry.data.logo);
   >
     <div class="float-right m-2 p-2 rounded dark:bg-gray-200">
       <Picture
+        {/* @ts-ignore */}
         src={image}
         alt={entry.data.company}
         widths={[64]}
