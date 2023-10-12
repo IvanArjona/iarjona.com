@@ -1,4 +1,4 @@
-import type { ImageMetadata } from '@astrojs/image/dist/vite-plugin-astro-image';
+import type { ImageMetadata } from 'astro';
 
 export interface NavigationItem {
   name: string;

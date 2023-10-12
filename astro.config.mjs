@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 import astroI18next from 'astro-i18next';
 import sitemap from '@astrojs/sitemap';
-import image from '@astrojs/image';
 import tailwind from '@astrojs/tailwind';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -24,9 +23,6 @@ export default defineConfig({
           en: 'en',
         },
       },
-    }),
-    image({
-      serviceEntryPoint: '@astrojs/image/sharp',
     }),
     tailwind({
       config: {

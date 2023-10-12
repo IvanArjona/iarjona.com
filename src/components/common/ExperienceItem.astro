@@ -1,7 +1,7 @@
 ---
 import { t } from 'i18next';
 import type { CollectionEntry } from 'astro:content';
-import { Picture } from '@astrojs/image/components';
+import { Picture } from 'astro:assets';
 import { formatDate } from '~/utils/dates';
 import { findImage } from '~/utils/images';
 
@@ -28,13 +28,11 @@ const image = await findImage(entry.data.logo);
   >
     <div class="float-right m-2 p-2 rounded dark:bg-gray-200">
       <Picture
-        {/* @ts-ignore */}
         src={image}
         alt={entry.data.company}
-        widths={[64]}
+        width="64"
+        height="64"
         sizes="64px"
-        aspectRatio="1:1"
-        background={undefined}
       />
     </div>
     <div class="text-sm capita text-secondary">

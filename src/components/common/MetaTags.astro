@@ -6,7 +6,7 @@ import type { MetaSEO } from '~/types';
 import { getRelativeUrlByFilePath } from '~/utils/directories';
 import { getCanonical } from '~/utils/permalinks';
 import GoogleAnalytics from './GoogleAnalytics.astro';
-import { getImage } from '@astrojs/image';
+import { getImage } from 'astro:assets';
 
 export interface Props extends MetaSEO {
   dontUseTitleTemplate?: boolean;

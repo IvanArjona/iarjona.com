@@ -1,5 +1,5 @@
 ---
-import '~/assets/styles/base.scss';
+import '../assets/styles/base.scss';
 
 import i18next from 'i18next';
 import MetaTags from '~/components/common/MetaTags.astro';
@@ -22,7 +22,8 @@ const { meta = {}, class: className } = Astro.props;
   </head>
 
   <body class={className}>
-    <slot />
-    <Sprite.Provider />
+    <Sprite.Provider>
+      <slot />
+    </Sprite.Provider>
   </body>
 </html>
