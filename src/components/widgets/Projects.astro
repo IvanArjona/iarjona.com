@@ -2,11 +2,11 @@
 import { t } from 'i18next';
 import Title from '../common/Title.astro';
 import ProjectItem from '../common/ProjectItem.astro';
-import { translatedCollection } from '~/utils/locale';
+import { filterCollectionByLanguage } from '~/utils/locale';
 import { getCollection } from 'astro:content';
 
 // @ts-ignore
-const projects = await getCollection('projects', translatedCollection);
+const projects = await getCollection('projects', filterCollectionByLanguage);
 ---
 
 <div id="projects" class="px-8 py-28">

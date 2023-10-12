@@ -14,6 +14,6 @@ export async function changeLanguage(language?: string) {
   return i18next.changeLanguage(language || defaultLocale);
 }
 
-export function translatedCollection({ id }: { id: string }) {
+export function filterCollectionByLanguage({ id }: { id: string }) {
   return id.startsWith(getCurrentLanguage());
 }
