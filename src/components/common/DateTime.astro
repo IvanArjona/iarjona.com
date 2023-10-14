@@ -1,0 +1,19 @@
+---
+import { formatDate } from '~/utils/dates';
+
+interface Props {
+  datetime?: Date;
+  fallback?: string | null;
+}
+
+const { datetime, fallback = '' } = Astro.props;
+const date = datetime ? formatDate(datetime) : null;
+---
+
+{datetime ? (
+  <time datetime={datetime.toISOString()}>
+    {date}
+  </time>
+) : (
+  <>{ fallback }</>
+)}

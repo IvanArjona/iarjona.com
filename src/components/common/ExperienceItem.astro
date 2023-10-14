@@ -2,8 +2,8 @@
 import { t } from 'i18next';
 import type { CollectionEntry } from 'astro:content';
 import { Picture } from 'astro:assets';
-import { formatDate } from '~/utils/dates';
 import { findImage } from '~/utils/images';
+import DateTime from './DateTime.astro';
 
 interface Props {
   entry: CollectionEntry<'experience'>;
@@ -12,8 +12,6 @@ interface Props {
 
 const { entry, index } = Astro.props;
 
-const fromDate = formatDate(entry.data.fromDate);
-const toDate = formatDate(entry.data.toDate) || t('now');
 const image = await findImage(entry.data.logo);
 ---
 
@@ -36,9 +34,9 @@ const image = await findImage(entry.data.logo);
       />
     </div>
     <div class="text-sm capita text-secondary">
-      <time datetime={entry.data.fromDate.toISOString()}>{fromDate}</time>
+      <DateTime datetime={entry.data.fromDate} />
       -
-      <time datetime={entry.data.toDate?.toISOString()}>{toDate}</time>
+      <DateTime datetime={entry.data.toDate} fallback={t('now')} />
     </div>
     <h3 class="mb-3 font-bold text-lg lg:text-2xl text-gray-800 dark:text-gray-100">
       {entry.data.title}
