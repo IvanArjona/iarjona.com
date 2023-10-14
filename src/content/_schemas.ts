@@ -1,20 +1,20 @@
 import { z } from 'astro:content';
 
-export const experienceSchema = z.object({
+export const experienceSchema = ({ image }: {image: () => z.ZodType}) => z.object({
   company: z.string(),
   title: z.string(),
   fromDate: z.date(),
   toDate: z.date().optional(),
   website: z.string().url(),
-  logo: z.string(),
+  logo: image(),
 });
 
-export const projectsSchema = z.object({
+export const projectsSchema = ({ image }: {image: () => z.ZodType}) => z.object({
   name: z.string(),
   github: z.string().url(),
   link: z.string().url().optional(),
   linkText: z.string().optional(),
-  image: z.string(),
+  image: image(),
   width: z.number(),
   height: z.number(),
   tags: z.array(z.string()),
