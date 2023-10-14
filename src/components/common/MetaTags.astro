@@ -7,6 +7,7 @@ import { getRelativeUrlByFilePath } from '~/utils/directories';
 import { getCanonical } from '~/utils/permalinks';
 import GoogleAnalytics from './GoogleAnalytics.astro';
 import { getImage } from 'astro:assets';
+import { getLanguages } from '~/utils/locale';
 
 export interface Props extends MetaSEO {
   dontUseTitleTemplate?: boolean;
@@ -18,6 +19,8 @@ const defaultImage = await getImage({
   width: 512,
   height: 512,
 });
+
+const path = Astro.url.pathname;
 
 const {
   title = '',
@@ -39,6 +42,8 @@ const image =
       new URL(getRelativeUrlByFilePath(_image.src), Astro.site)
     : null;
 
+const supportedLanguages = await getLanguages();
+
 const seo = {
   title: dontUseTitleTemplate ? title : `${title} - ${config.fullName}`,
   description: description,
@@ -46,6 +51,12 @@ const seo = {
   noindex: noindex,
   nofollow: nofollow,
   charset: 'UTF-8',
+  languageAlternates: supportedLanguages.map((language) => {
+    return {
+      hrefLang: language,
+      href: `${config.origin}/${language}/`,
+    };
+  }),
   openGraph: {
     basic: {
       title: ogTitle,
