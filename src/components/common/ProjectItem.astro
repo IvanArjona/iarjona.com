@@ -2,7 +2,6 @@
 import { Sprite } from 'astro-iconify';
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
-import { findImage } from '~/utils/images';
 
 export interface Props {
   entry: CollectionEntry<'projects'>;
@@ -11,7 +10,6 @@ export interface Props {
 
 const { entry, index } = Astro.props;
 const { Content } = await entry.render();
-const image = await findImage(entry.data.image);
 ---
 
 <div class="flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-14 overflow-hidden">
@@ -23,12 +21,10 @@ const image = await findImage(entry.data.image);
     >
       <Image
         class="w-full h-full"
-        {/* @ts-ignore */}
-        src={image}
+        src={entry.data.image}
         width={entry.data.width}
         height={entry.data.height}
         alt={entry.data.name}
-        background={undefined}
       />
     </a>
     <div class="flex items-center justify-center gap-4 font-mono">
