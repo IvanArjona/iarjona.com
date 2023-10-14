@@ -14,25 +14,10 @@ export interface SocialItem {
   href: string;
 }
 
-export interface Image extends ImageMetadata {
-  (): Promise<ImageDefault>;
-}
-
-interface ImageDefault {
-  default: Image;
-}
-
-export interface Images {
-  [name: string]: Image;
-}
-
 export interface MetaSEO {
   title?: string;
   description?: string;
-  image?: string;
-  canonical?: string | URL;
+  image?: ImageMetadata;
   noindex?: boolean;
   nofollow?: boolean;
-  ogTitle?: string;
-  ogType?: string;
 }

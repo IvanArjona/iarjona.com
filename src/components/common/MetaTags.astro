@@ -3,66 +3,49 @@ import { SEO } from 'astro-seo';
 import { HeadHrefLangs } from 'astro-i18next/components';
 import config from '~/config';
 import type { MetaSEO } from '~/types';
-import { getRelativeUrlByFilePath } from '~/utils/directories';
-import { getCanonical } from '~/utils/permalinks';
 import GoogleAnalytics from './GoogleAnalytics.astro';
 import { getImage } from 'astro:assets';
 import { getLanguages } from '~/utils/locale';
+import photo from '../../assets/images/photo.jpg';
+import type { Props as PropsSEO } from 'astro-seo';
 
-export interface Props extends MetaSEO {
-  dontUseTitleTemplate?: boolean;
-}
+export interface Props extends MetaSEO {}
 
 const defaultImage = await getImage({
-  src: config.defaultImage,
+  src: photo,
   alt: config.name,
   width: 512,
   height: 512,
 });
 
-const path = Astro.url.pathname;
-
 const {
   title = '',
   description = '',
-  image: _image = defaultImage.src,
-  canonical = getCanonical(String(Astro.url.pathname)),
+  image = defaultImage,
   noindex = false,
   nofollow = false,
-  ogTitle = title,
-  ogType = 'website',
-  dontUseTitleTemplate = false,
 } = Astro.props;
-
-const image =
-  typeof _image === 'string'
-    ? new URL(_image, Astro.site)
-    : _image && typeof _image['src'] !== 'undefined'
-    ? // @ts-ignore
-      new URL(getRelativeUrlByFilePath(_image.src), Astro.site)
-    : null;
 
 const supportedLanguages = await getLanguages();
 
-const seo = {
-  title: dontUseTitleTemplate ? title : `${title} - ${config.fullName}`,
+const seo: PropsSEO = {
+  title: title,
+  titleTemplate: `%s - ${config.fullName}`,
   description: description,
-  canonical: String(canonical),
   noindex: noindex,
   nofollow: nofollow,
   charset: 'UTF-8',
   languageAlternates: supportedLanguages.map((language) => {
     return {
       hrefLang: language,
-      href: `${config.origin}/${language}/`,
+      href: `${Astro.site}/${language}`,
     };
   }),
   openGraph: {
     basic: {
-      title: ogTitle,
-      type: ogType,
-      image: image,
-      url: String(canonical),
+      title: title,
+      type: 'website',
+      image: image.src,
     },
     image: {
       alt: description,
@@ -75,7 +58,7 @@ const seo = {
     title: title,
     description: description,
     card: 'summary',
-    image: image,
+    image: image.src,
   },
   extend: {
     link: [
@@ -100,7 +83,6 @@ const seo = {
 };
 ---
 
-{/* @ts-ignore */}
 <SEO {...seo} />
 <GoogleAnalytics />
 <HeadHrefLangs />
