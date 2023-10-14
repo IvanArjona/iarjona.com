@@ -7,6 +7,7 @@ import { fileURLToPath } from 'url';
 import config from './src/config';
 import partytown from '@astrojs/partytown';
 import compress from 'astro-compress';
+import robotsTxt from 'astro-robots-txt';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -41,6 +42,7 @@ export default defineConfig({
       js: true,
       svg: true,
     }),
+    robotsTxt(),
   ],
 
   vite: {
