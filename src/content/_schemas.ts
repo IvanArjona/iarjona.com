@@ -27,7 +27,6 @@ export const skillsSchema = z.object({
   skills: z.array(
     z.object({
       name: z.string(),
-      pack: z.string(),
       icon: z.string(),
     })
   ),

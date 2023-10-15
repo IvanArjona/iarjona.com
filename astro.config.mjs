@@ -8,6 +8,7 @@ import config from './src/config';
 import partytown from '@astrojs/partytown';
 import compress from 'astro-compress';
 import robotsTxt from 'astro-robots-txt';
+import icon from 'astro-icon';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -43,6 +44,15 @@ export default defineConfig({
       svg: true,
     }),
     robotsTxt(),
+    icon({
+      include: {
+        tabler: ['*'],
+        logos: ['*'],
+        'vscode-icons': ['*'],
+        'simple-icons': ['*'],
+        'skill-icons': ['*'],
+      },
+    }),
   ],
 
   vite: {

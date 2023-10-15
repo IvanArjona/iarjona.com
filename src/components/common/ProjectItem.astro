@@ -1,5 +1,5 @@
 ---
-import { Sprite } from 'astro-iconify';
+import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 
@@ -36,7 +36,7 @@ const { Content } = await entry.render();
         data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
       >
         GitHub
-        <Sprite name="tabler:brand-github" class="h-6 w-6 fill-white" />
+        <Icon name="tabler:brand-github" class="h-6 w-6 fill-white" />
       </a>
       {
         entry.data.link ? (
@@ -48,7 +48,7 @@ const { Content } = await entry.render();
             data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
           >
             {entry.data.linkText}
-            <Sprite name="tabler:external-link" class="h-6 w-6" />
+            <Icon name="tabler:external-link" class="h-6 w-6" />
           </a>
         ) : (
           ''

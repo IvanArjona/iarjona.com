@@ -9,7 +9,6 @@ export type Navigation = Array<NavigationItem>;
 
 export interface SocialItem {
   title: string;
-  pack: string;
   icon: string;
   href: string;
 }

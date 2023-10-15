@@ -1,6 +1,6 @@
 ---
 import { t } from 'i18next';
-import { Sprite } from 'astro-iconify';
+import { Icon } from 'astro-icon/components';
 import ContactFormInput from './ContactFormInput.astro';
 import config from '~/config';
 
@@ -14,7 +14,7 @@ const email = config.email;
   data-aos="flip-up"
 >
   <div class="col-span-2 md:col-span-1 row-span-1 md:row-span-3 flex flex-col items-center justify-center gap-2">
-    <Sprite name="tabler:mail" class="h-12 w-12" />
+    <Icon name="tabler:mail" class="h-12 w-12" />
     <span class="text-sm tracking-wide">
       {t('email-me-at')}
     </span>
@@ -36,7 +36,7 @@ const email = config.email;
       class="font-bold rounded-lg text-sm px-6 py-3 text-center text-white bg-secondary-dark hover:bg-secondary-darker focus:ring-4 focus:ring-secondary-light"
     >
       {t('send-message')}
-      <Sprite name="tabler:send" class="inline ml-2 h-6 w-6" />
+      <Icon name="tabler:send" class="inline ml-2 h-6 w-6" />
     </button>
   </div>
 </form>

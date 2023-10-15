@@ -3,7 +3,6 @@ import '../assets/styles/base.scss';
 
 import i18next from 'i18next';
 import MetaTags from '~/components/common/MetaTags.astro';
-import { Sprite } from 'astro-iconify';
 import type { MetaSEO } from '~/types';
 
 export interface Props {
@@ -22,8 +21,6 @@ const { meta = {}, class: className } = Astro.props;
   </head>
 
   <body class={className}>
-    <Sprite.Provider>
-      <slot />
-    </Sprite.Provider>
+    <slot />
   </body>
 </html>

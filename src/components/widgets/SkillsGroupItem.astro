@@ -1,9 +1,8 @@
 ---
-import Icon from 'astro-iconify';
+import { Icon } from 'astro-icon/components';
 
 interface Skill {
   name: string;
-  pack: string;
   icon: string;
 }
 
@@ -21,6 +20,6 @@ const { skill, hide } = Astro.props;
   }`}
   data-aos="zoom-in"
 >
-  <Icon pack={skill.pack} name={skill.icon} class="h-10 w-10" />
+  <Icon name={skill.icon} class="h-10 w-10" />
   {skill.name}
 </div>
