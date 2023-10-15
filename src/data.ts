@@ -11,20 +11,17 @@ export const navigation: Navigation = [
 export const socials: SocialItem[] = [
   {
     title: 'Email',
-    pack: 'tabler',
-    icon: 'mail',
+    icon: 'tabler:mail',
     href: `mailto:${config.email}`,
   },
   {
     title: 'GitHub',
-    pack: 'tabler',
-    icon: 'brand-github',
+    icon: 'tabler:brand-github',
     href: config.github,
   },
   {
     title: 'LinkedIn',
-    pack: 'tabler',
-    icon: 'brand-linkedin',
+    icon: 'tabler:brand-linkedin',
     href: config.linkedIn,
   },
 ];

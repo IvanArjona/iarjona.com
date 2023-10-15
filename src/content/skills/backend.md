@@ -2,33 +2,23 @@
 name: Backend
 skills:
   - name: Python
-    pack: logos
-    icon: python
+    icon: logos:python
   - name: Django
-    pack: logos
-    icon: django-icon
+    icon: logos:django-icon
   - name: php
-    pack: vscode-icons
-    icon: file-type-php3
+    icon: vscode-icons:file-type-php3
   - name: Laravel
-    pack: logos
-    icon: laravel
+    icon: logos:laravel
   - name: NodeJS
-    pack: vscode-icons
-    icon: file-type-node
+    icon: vscode-icons:file-type-node
   - name: ExpressJS
-    pack: simple-icons
-    icon: express
+    icon: simple-icons:express
   - name: RabbitMQ
-    pack: logos
-    icon: rabbitmq-icon
+    icon: logos:rabbitmq-icon
   - name: Fast API
-    pack: skill-icons
-    icon: fastapi
+    icon: skill-icons:fastapi
   - name: Flask
-    pack: simple-icons
-    icon: flask
+    icon: simple-icons:flask
   - name: Java
-    pack: logos
-    icon: java
+    icon: logos:java
 ---

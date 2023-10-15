@@ -1,8 +1,8 @@
 ---
 import { t } from 'i18next';
-import { Picture } from '@astrojs/image/components';
+import { Picture } from 'astro:assets';
 import Socials from '../common/Socials.astro';
-import photo from '~/assets/images/photo.jpg';
+import photo from '../../assets/images/photo.jpg';
 import config from '~/config';
 
 const name = config.name;
@@ -16,7 +16,6 @@ const name = config.name;
         alt={name}
         widths={[256, 320, 512]}
         sizes="(max-width: 1280px) 256px, (max-width: 1536px) 320px, 512px"
-        aspectRatio="1:1"
         background={undefined}
       />
     </div>

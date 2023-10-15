@@ -1,9 +1,8 @@
 ---
 import { t } from 'i18next';
 import type { CollectionEntry } from 'astro:content';
-import { Picture } from '@astrojs/image/components';
-import { formatDate } from '~/utils/dates';
-import { findImage } from '~/utils/images';
+import { Picture } from 'astro:assets';
+import DateTime from './DateTime.astro';
 
 interface Props {
   entry: CollectionEntry<'experience'>;
@@ -11,10 +10,6 @@ interface Props {
 }
 
 const { entry, index } = Astro.props;
-
-const fromDate = formatDate(entry.data.fromDate);
-const toDate = formatDate(entry.data.toDate) || t('now');
-const image = await findImage(entry.data.logo);
 ---
 
 <div class={`my-12 flex justify-between items-center ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
@@ -28,19 +23,17 @@ const image = await findImage(entry.data.logo);
   >
     <div class="float-right m-2 p-2 rounded dark:bg-gray-200">
       <Picture
-        {/* @ts-ignore */}
-        src={image}
+        src={entry.data.logo}
         alt={entry.data.company}
-        widths={[64]}
+        width="64"
+        height="64"
         sizes="64px"
-        aspectRatio="1:1"
-        background={undefined}
       />
     </div>
     <div class="text-sm capita text-secondary">
-      <time datetime={entry.data.fromDate.toISOString()}>{fromDate}</time>
+      <DateTime datetime={entry.data.fromDate} />
       -
-      <time datetime={entry.data.toDate?.toISOString()}>{toDate}</time>
+      <DateTime datetime={entry.data.toDate} fallback={t('now')} />
     </div>
     <h3 class="mb-3 font-bold text-lg lg:text-2xl text-gray-800 dark:text-gray-100">
       {entry.data.title}

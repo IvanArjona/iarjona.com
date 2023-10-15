@@ -2,33 +2,23 @@
 name: Frontend
 skills:
   - name: JavaScript
-    pack: logos
-    icon: javascript
+    icon: logos:javascript
   - name: TypeScript
-    pack: logos
-    icon: typescript-icon
+    icon: logos:typescript-icon
   - name: VueJS
-    pack: logos
-    icon: vue
+    icon: logos:vue
   - name: Nuxt
-    pack: logos
-    icon: nuxt-icon
+    icon: logos:nuxt-icon
   - name: ReactJS
-    pack: logos
-    icon: react
+    icon: logos:react
   - name: Next.js
-    pack: skill-icons
-    icon: nextjs-light
+    icon: skill-icons:nextjs-light
   - name: Astro
-    pack: logos
-    icon: astro
+    icon: logos:astro
   - name: Tailwind CSS
-    pack: logos
-    icon: tailwindcss-icon
+    icon: logos:tailwindcss-icon
   - name: Bootstrap
-    pack: logos
-    icon: bootstrap
+    icon: logos:bootstrap
   - name: Sass
-    pack: logos
-    icon: sass
+    icon: logos:sass
 ---

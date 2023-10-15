@@ -1,8 +1,7 @@
 ---
-import { Sprite } from 'astro-iconify';
-import { Image } from '@astrojs/image/components';
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
-import { findImage } from '~/utils/images';
 
 export interface Props {
   entry: CollectionEntry<'projects'>;
@@ -11,7 +10,6 @@ export interface Props {
 
 const { entry, index } = Astro.props;
 const { Content } = await entry.render();
-const image = await findImage(entry.data.image);
 ---
 
 <div class="flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-14 overflow-hidden">
@@ -23,12 +21,10 @@ const image = await findImage(entry.data.image);
     >
       <Image
         class="w-full h-full"
-        {/* @ts-ignore */}
-        src={image}
+        src={entry.data.image}
         width={entry.data.width}
         height={entry.data.height}
         alt={entry.data.name}
-        background={undefined}
       />
     </a>
     <div class="flex items-center justify-center gap-4 font-mono">
@@ -40,7 +36,7 @@ const image = await findImage(entry.data.image);
         data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
       >
         GitHub
-        <Sprite name="tabler:brand-github" class="h-6 w-6 fill-white" />
+        <Icon name="tabler:brand-github" class="h-6 w-6 fill-white" />
       </a>
       {
         entry.data.link ? (
@@ -52,7 +48,7 @@ const image = await findImage(entry.data.image);
             data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
           >
             {entry.data.linkText}
-            <Sprite name="tabler:external-link" class="h-6 w-6" />
+            <Icon name="tabler:external-link" class="h-6 w-6" />
           </a>
         ) : (
           ''

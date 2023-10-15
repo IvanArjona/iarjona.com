@@ -1,7 +1,7 @@
 ---
 import config from '~/config';
 import { socials } from '~/data';
-import { Sprite } from 'astro-iconify';
+import { Icon } from 'astro-icon/components';
 
 const fullName = config.fullName;
 ---
@@ -13,10 +13,9 @@ const fullName = config.fullName;
     </span>
     <div class="flex gap-4">
       {
-        socials.map(({ title, pack, icon, href }) => (
+        socials.map(({ title, icon, href }) => (
           <a href={href} title={title} target="_blank" rel="noreferrer" class="p-2">
-            <Sprite
-              pack={pack}
+            <Icon
               name={icon}
               class="h-6 w-6 fill-white hover:fill-secondary transition-colors duration-300"
             />

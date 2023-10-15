@@ -2,24 +2,17 @@
 name: Ops
 skills:
   - name: Bash
-    pack: tabler
-    icon: terminal-2
+    icon: tabler:terminal-2
   - name: Docker
-    pack: logos
-    icon: docker-icon
+    icon: logos:docker-icon
   - name: Kubernetes
-    pack: logos
-    icon: kubernetes
+    icon: logos:kubernetes
   - name: PostgreSQL
-    pack: logos
-    icon: postgresql
+    icon: logos:postgresql
   - name: MySQL
-    pack: logos
-    icon: mysql-icon
+    icon: logos:mysql-icon
   - name: Mongo DB
-    pack: logos
-    icon: mongodb-icon
+    icon: logos:mongodb-icon
   - name: Google Cloud
-    pack: logos
-    icon: google-cloud
+    icon: logos:google-cloud
 ---

@@ -1,7 +1,7 @@
 ---
 name: Web application for the collection, treatment and visualization of public data
 github: https://github.com/IvanArjona/TFG-Datos-publicos
-image: ~/assets/images/projects/tfg-map.png
+image: /src/assets/images/projects/tfg-map.png
 width: 607
 height: 412
 tags:

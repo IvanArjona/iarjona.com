@@ -3,10 +3,10 @@ import { t } from 'i18next';
 import { getCollection } from 'astro:content';
 import ExperienceItem from '~/components/common/ExperienceItem.astro';
 import Title from '../common/Title.astro';
-import { translatedCollection } from '~/utils/locale';
+import { filterCollectionByLanguage } from '~/utils/locale';
 
 // @ts-ignore
-const experienceList = await getCollection('experience', translatedCollection);
+const experienceList = await getCollection('experience', filterCollectionByLanguage);
 experienceList.sort((item1, item2) => item2.data.fromDate.valueOf() - item1.data.fromDate.valueOf());
 ---
 

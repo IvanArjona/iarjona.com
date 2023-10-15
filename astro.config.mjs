@@ -1,13 +1,14 @@
 import { defineConfig } from 'astro/config';
 import astroI18next from 'astro-i18next';
 import sitemap from '@astrojs/sitemap';
-import image from '@astrojs/image';
 import tailwind from '@astrojs/tailwind';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import config from './src/config';
 import partytown from '@astrojs/partytown';
 import compress from 'astro-compress';
+import robotsTxt from 'astro-robots-txt';
+import icon from 'astro-icon';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -24,9 +25,6 @@ export default defineConfig({
           en: 'en',
         },
       },
-    }),
-    image({
-      serviceEntryPoint: '@astrojs/image/sharp',
     }),
     tailwind({
       config: {
@@ -45,14 +43,21 @@ export default defineConfig({
       js: true,
       svg: true,
     }),
+    robotsTxt(),
+    icon({
+      include: {
+        tabler: ['*'],
+        logos: ['*'],
+        'vscode-icons': ['*'],
+        'simple-icons': ['*'],
+        'skill-icons': ['*'],
+      },
+    }),
   ],
 
   vite: {
     alias: {
       '~': path.resolve(__dirname, './src'),
-    },
-    ssr: {
-      external: ['svgo'],
     },
   },
 });
