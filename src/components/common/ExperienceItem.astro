@@ -17,7 +17,7 @@ const { entry, index } = Astro.props;
   <div class="z-20 flex items-center order-1 bg-secondary-dark dark:bg-secondary shadow-xl w-8 h-8 rounded-full">
     <div class="mx-auto font-semibold text-lg text-white"></div>
   </div>
-  <div
+  <article
     class="order-1 bg-gray-100 dark:bg-opacity-10 rounded-lg shadow-xl w-10/12 lg:w-5/12 px-8 py-6"
     data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'}
   >
@@ -47,5 +47,5 @@ const { entry, index } = Astro.props;
     <a href={entry.data.website} class="mt-2 mr-3 text-sm float-right text-secondary">
       {entry.data.company}
     </a>
-  </div>
+  </articl>
 </div>
