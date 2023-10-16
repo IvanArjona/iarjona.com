@@ -7,7 +7,7 @@ import SkillGroup from './SkillGroup.astro';
 const skills = await getCollection('skills');
 ---
 
-<div id="skills" class="py-28">
+<section id="skills" class="py-28">
   <Title>
     {t('skills')}
   </Title>
@@ -16,4 +16,4 @@ const skills = await getCollection('skills');
       {skills.map((entry) => <SkillGroup group={entry} />)}
     </div>
   </div>
-</div>
+</section>

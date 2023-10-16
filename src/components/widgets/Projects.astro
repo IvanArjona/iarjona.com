@@ -9,11 +9,11 @@ import { getCollection } from 'astro:content';
 const projects = await getCollection('projects', filterCollectionByLanguage);
 ---
 
-<div id="projects" class="px-8 py-28">
+<section id="projects" class="px-8 py-28">
   <Title>
     {t('projects')}
   </Title>
   <div class="container mx-auto mt-12 flex flex-col gap-28">
     {projects.map((item, index) => <ProjectItem entry={item} index={index} />)}
   </div>
-</div>
+</section>
