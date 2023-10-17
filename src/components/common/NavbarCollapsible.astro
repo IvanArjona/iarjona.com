@@ -23,7 +23,7 @@ const { navigation } = Astro.props;
     id="nav"
     class="absolute hide top-0 h-screen w-screen bg-amber-500 dark:bg-red-500 transition-opacity duration-500"
   >
-    <div class="pt-24 p-8 h-full flex flex-col justify-between">
+    <nav class="pt-24 p-8 h-full flex flex-col justify-between">
       <ul class="flex flex-col items-center gap-8 tall:gap-20 my-auto">
         {
           navigation.map((item) => (
@@ -39,7 +39,7 @@ const { navigation } = Astro.props;
         }
       </ul>
       <Socials />
-    </div>
+    </nav>
   </div>
 </nav>
 
