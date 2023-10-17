@@ -5,6 +5,7 @@ import ThemeSwitch from './ThemeSwitch.astro';
 import type { Navigation } from '~/types';
 import Socials from './Socials.astro';
 import NavbarCollapsibleHamburguer from './NavbarCollapsibleHamburguer.astro';
+import LanguageSwitch from './LanguageSwitch.astro';
 
 interface Props {
   navigation: Navigation;
@@ -16,6 +17,7 @@ const { navigation } = Astro.props;
 <nav class="fixed z-40 w-full bg-black bg-opacity-20">
   <div class="relative container mx-auto flex justify-between z-10 p-4">
     <ThemeSwitch />
+    <LanguageSwitch />
     <NavbarCollapsibleHamburguer />
   </div>
 
