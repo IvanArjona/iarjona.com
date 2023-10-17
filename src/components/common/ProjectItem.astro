@@ -12,7 +12,7 @@ const { entry, index } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<div class="flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-14 overflow-hidden">
+<article class="flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-14 overflow-hidden">
   <aside class="lg:max-w-1/2 w-fit shrink">
     <a
       href={entry.data.link || entry.data.github}
@@ -79,4 +79,4 @@ const { Content } = await entry.render();
       }
     </div>
   </div>
-</div>
+</article>

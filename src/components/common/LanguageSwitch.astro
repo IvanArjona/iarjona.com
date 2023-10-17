@@ -2,22 +2,31 @@
 import { t } from 'i18next';
 import { localizeUrl } from 'astro-i18next';
 import { getCurrentLanguage, getLanguages } from '~/utils/locale';
+import { Icon } from 'astro-icon/components';
 
 const currentUrl = Astro.url.href;
 const currentLanguage = getCurrentLanguage();
 const supportedLanguages = await getLanguages();
 ---
 
-<div class="text-sm mr-4 flex gap-1">
-  {
-    supportedLanguages.map((language: string) => (
-      <a
-        href={localizeUrl(currentUrl, language)}
-        title={t(`locale-${language}`)}
-        class={`uppercase ${language === currentLanguage ? 'underline' : ''}`}
-      >
-        {language}
-      </a>
-    ))
-  }
+<div class="flex gap-1 items-center mr-4">
+  <Icon name="tabler:language" class="h-5 w-5" />
+  <ul class="flex gap-1 font-thin">
+    {
+      supportedLanguages.map((language: string) => (
+        <li>
+          <a
+            rel="alternate"
+            href={localizeUrl(currentUrl, language)}
+            hreflang="{language}"
+            lang="{language}"
+            title={t(`locale-${language}`)}
+            class={`uppercase ${language === currentLanguage ? 'underline' : ''}`}
+          >
+            {language}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </div>

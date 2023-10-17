@@ -8,7 +8,7 @@ import config from '~/config';
 const name = config.name;
 ---
 
-<div class="w-screen grid sm:grid-cols-2 gap-8">
+<header class="w-screen grid sm:grid-cols-2 gap-8">
   <div class="col-start-0 mx-auto" data-aos="fade-left">
     <div class="h-64 w-64 xl:h-72 xl:w-72 2xl:h-80 2xl:w-80 shadow-[1rem_-1rem] shadow-accent relative">
       <Picture
@@ -16,11 +16,10 @@ const name = config.name;
         alt={name}
         widths={[256, 320, 512]}
         sizes="(max-width: 1280px) 256px, (max-width: 1536px) 320px, 512px"
-        background={undefined}
       />
     </div>
   </div>
-  <section
+  <hgroup
     class="-mt-20 sm:mt-auto z-10 sm:order-first sm:row-span-2 w-min mx-auto flex flex-col gap-2 md:gap-4"
     data-aos="fade-right"
     data-aos-duration="800"
@@ -40,6 +39,6 @@ const name = config.name;
         {t('title-2')}
       </span>
     </h2>
-  </section>
+  </hgroup>
   <Socials />
-</div>
+</header>

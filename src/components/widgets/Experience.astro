@@ -10,7 +10,7 @@ const experienceList = await getCollection('experience', filterCollectionByLangu
 experienceList.sort((item1, item2) => item2.data.fromDate.valueOf() - item1.data.fromDate.valueOf());
 ---
 
-<div id="experience" class="py-28 bg-terciary">
+<section id="experience" class="py-28 bg-terciary">
   <Title>
     {t('experience')}
   </Title>
@@ -23,4 +23,4 @@ experienceList.sort((item1, item2) => item2.data.fromDate.valueOf() - item1.data
       {experienceList.map((item, index) => <ExperienceItem entry={item} index={index} />)}
     </div>
   </div>
-</div>
+</section>
