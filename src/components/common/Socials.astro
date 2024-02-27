@@ -8,7 +8,6 @@ import { socials } from '~/data';
     socials.map(({ title, icon, href }, index) => (
       <a
         href={href}
-        title={title}
         target="_blank"
         rel="noreferrer"
         data-aos="zoom-in"
@@ -19,6 +18,7 @@ import { socials } from '~/data';
         <Icon
           name={icon}
           class="h-10 w-10 2xl:h-14 2xl:w-14 m-2 fill-white hover:fill-secondary transition-all duration-300 hover:rotate-6"
+          title={title}
         />
       </a>
     ))
