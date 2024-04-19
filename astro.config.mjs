@@ -6,7 +6,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import config from './src/config';
 import partytown from '@astrojs/partytown';
-import compress from 'astro-compress';
+import compress from '@playform/compress';
 import robotsTxt from 'astro-robots-txt';
 import icon from 'astro-icon';
 
