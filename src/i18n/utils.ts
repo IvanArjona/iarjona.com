@@ -18,7 +18,7 @@ export function useTranslations(lang: Lang) {
 
 export function useTranslatedPath(lang: Lang) {
   return function translatePath(path: string, l: string = lang) {
-    return !showDefaultLang && l === defaultLang ? path : `/${l}${path}`;
+    return !showDefaultLang && l === defaultLang ? path : `/${l}/${path}`;
   };
 }
 
