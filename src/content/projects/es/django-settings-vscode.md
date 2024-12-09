@@ -1,5 +1,5 @@
 ---
-name: Django Settings for VSCode
+name: Django Settings para VSCode
 github: https://github.com/IvanArjona/django-settings-vscode
 link: https://marketplace.visualstudio.com/items?itemName=IvanArjona.django-settings-vscode
 linkText: Marketplace
