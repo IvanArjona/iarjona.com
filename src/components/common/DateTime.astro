@@ -6,7 +6,7 @@ interface Props {
   fallback?: string | null;
 }
 
-const { datetime, fallback = '' } = Astro.props;
+const { datetime, fallback = '' }: Props = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const date = datetime?.toLocaleString(lang, {
   month: 'long',

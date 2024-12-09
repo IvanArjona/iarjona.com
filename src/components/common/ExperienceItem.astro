@@ -12,7 +12,7 @@ interface Props {
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const { entry, index } = Astro.props;
+const { entry, index }: Props = Astro.props;
 ---
 
 <div class={`my-12 flex justify-between items-center ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>

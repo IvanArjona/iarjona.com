@@ -14,7 +14,7 @@ const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
 const t = useTranslations(lang);
 
-const { navigation } = Astro.props;
+const { navigation }: Props = Astro.props;
 ---
 
 <nav class="fixed z-40 w-full bg-black bg-opacity-20">
