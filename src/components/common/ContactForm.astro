@@ -1,8 +1,11 @@
 ---
-import { t } from 'i18next';
 import { Icon } from 'astro-icon/components';
 import ContactFormInput from './ContactFormInput.astro';
 import config from '~/config';
+import { getLangFromUrl, useTranslations } from '~/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const email = config.email;
 ---

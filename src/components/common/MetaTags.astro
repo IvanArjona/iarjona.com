@@ -1,13 +1,12 @@
 ---
 import { SEO } from 'astro-seo';
-import { HeadHrefLangs } from 'astro-i18next/components';
 import config from '~/config';
 import type { MetaSEO } from '~/types';
 import GoogleAnalytics from './GoogleAnalytics.astro';
 import { getImage } from 'astro:assets';
-import { getLanguages } from '~/utils/locale';
 import photo from '../../assets/images/photo.jpg';
 import type { Props as PropsSEO } from 'astro-seo';
+import { languages } from '~/i18n/config';
 
 export interface Props extends MetaSEO {}
 
@@ -26,8 +25,6 @@ const {
   nofollow = false,
 } = Astro.props;
 
-const supportedLanguages = await getLanguages();
-
 const seo: PropsSEO = {
   title: title,
   titleTemplate: `%s - ${config.fullName}`,
@@ -35,10 +32,10 @@ const seo: PropsSEO = {
   noindex: noindex,
   nofollow: nofollow,
   charset: 'UTF-8',
-  languageAlternates: supportedLanguages.map((language) => {
+  languageAlternates: Object.keys(languages).map((language) => {
     return {
       hrefLang: language,
-      href: `${Astro.site}/${language}`,
+      href: `${Astro.site}${language}`,
     };
   }),
   openGraph: {
@@ -85,4 +82,3 @@ const seo: PropsSEO = {
 
 <SEO {...seo} />
 <GoogleAnalytics />
-<HeadHrefLangs />

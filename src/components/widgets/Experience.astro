@@ -1,12 +1,14 @@
 ---
-import { t } from 'i18next';
 import { getCollection } from 'astro:content';
 import ExperienceItem from '~/components/common/ExperienceItem.astro';
 import Title from '../common/Title.astro';
-import { filterCollectionByLanguage } from '~/utils/locale';
+import { getLangFromUrl, usefilterCollectionByLanguage, useTranslations } from '~/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 // @ts-ignore
-const experienceList = await getCollection('experience', filterCollectionByLanguage);
+const experienceList = await getCollection('experience', usefilterCollectionByLanguage(lang));
 experienceList.sort((item1, item2) => item2.data.fromDate.valueOf() - item1.data.fromDate.valueOf());
 ---
 

@@ -1,4 +1,5 @@
 ---
+import { getLangFromUrl } from '~/i18n/utils';
 import { formatDate } from '~/utils/dates';
 
 interface Props {
@@ -7,7 +8,8 @@ interface Props {
 }
 
 const { datetime, fallback = '' } = Astro.props;
-const date = datetime ? formatDate(datetime) : null;
+const lang = getLangFromUrl(Astro.url);
+const date = datetime ? formatDate(datetime, lang) : null;
 ---
 
 {datetime ? (

@@ -1,13 +1,16 @@
 ---
-import { t } from 'i18next';
-import { localizePath } from 'astro-i18next';
 import LanguageSwitch from './LanguageSwitch.astro';
 import ThemeSwitch from './ThemeSwitch.astro';
 import type { Navigation } from '~/types';
+import { getLangFromUrl, useTranslatedPath, useTranslations } from '~/i18n/utils';
 
 interface Props {
   navigation: Navigation;
 }
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+const t = useTranslations(lang);
 
 const { navigation } = Astro.props;
 ---
@@ -18,7 +21,7 @@ const { navigation } = Astro.props;
       navigation.map((item, index) => (
         <li>
           <a
-            href={localizePath(item.href)}
+            href={translatePath(item.href)}
             class="hover:underline underline-offset-2 decoration-secondary tracking-wide px-3 py-2 rounded-md font-medium"
             data-aos="zoom-in"
             data-aos-delay={`${index + 1}00`}

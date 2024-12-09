@@ -1,8 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
-import { t } from 'i18next';
 import Title from '../common/Title.astro';
 import SkillGroup from './SkillGroup.astro';
+import { getLangFromUrl, useTranslations } from '~/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const skills = await getCollection('skills');
 ---

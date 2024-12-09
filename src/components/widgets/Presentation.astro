@@ -1,11 +1,14 @@
 ---
-import { t } from 'i18next';
 import { Picture } from 'astro:assets';
 import Socials from '../common/Socials.astro';
 import photo from '../../assets/images/photo.jpg';
 import config from '~/config';
+import { getLangFromUrl, useTranslations } from '~/i18n/utils';
 
 const name = config.name;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <header class="w-screen grid sm:grid-cols-2 gap-8">

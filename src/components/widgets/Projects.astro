@@ -1,12 +1,13 @@
 ---
-import { t } from 'i18next';
 import Title from '../common/Title.astro';
 import ProjectItem from '../common/ProjectItem.astro';
-import { filterCollectionByLanguage } from '~/utils/locale';
 import { getCollection } from 'astro:content';
+import { getLangFromUrl, useTranslations, usefilterCollectionByLanguage } from '~/i18n/utils';
 
-// @ts-ignore
-const projects = await getCollection('projects', filterCollectionByLanguage);
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const projects = await getCollection('projects', usefilterCollectionByLanguage(lang));
 ---
 
 <section id="projects" class="px-8 py-28">

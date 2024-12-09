@@ -1,12 +1,10 @@
-import { getCurrentLanguage } from './locale';
+import type { Lang } from "~/types";
 
-const currentLanguage = getCurrentLanguage();
+export function formatDate(date: Date, lang: Lang): string {
+  const dateFormatter = new Intl.DateTimeFormat(lang, {
+    month: 'long',
+    year: 'numeric',
+  });
 
-const dateFormatter = new Intl.DateTimeFormat(currentLanguage, {
-  month: 'long',
-  year: 'numeric',
-});
-
-export function formatDate(date: Date): string {
   return dateFormatter.format(date);
 }

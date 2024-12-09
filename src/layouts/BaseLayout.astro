@@ -1,7 +1,6 @@
 ---
 import '../assets/styles/base.scss';
 
-import i18next from 'i18next';
 import MetaTags from '~/components/common/MetaTags.astro';
 import type { MetaSEO } from '~/types';
 
@@ -10,12 +9,13 @@ export interface Props {
   class?: string;
 }
 
-const language = i18next.language;
+import { getLangFromUrl } from '~/i18n/utils';
+const lang = getLangFromUrl(Astro.url);
 const { meta = {}, class: className } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang={language}>
+<html lang={lang}>
   <head>
     <MetaTags {...meta} />
   </head>
