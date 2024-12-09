@@ -7,7 +7,6 @@ import { getLangFromUrl, usefilterCollectionByLanguage, useTranslations } from '
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-// @ts-ignore
 const experienceList = await getCollection('experience', usefilterCollectionByLanguage(lang));
 experienceList.sort((item1, item2) => item2.data.fromDate.valueOf() - item1.data.fromDate.valueOf());
 ---
