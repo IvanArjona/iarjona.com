@@ -14,10 +14,4 @@ const date = datetime?.toLocaleString(lang, {
 });
 ---
 
-{datetime ? (
-  <time datetime={datetime.toISOString()}>
-    {date}
-  </time>
-) : (
-  <>{ fallback }</>
-)}
+{datetime ? <time datetime={datetime.toISOString()}>{date}</time> : <>{fallback}</>}

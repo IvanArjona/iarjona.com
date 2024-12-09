@@ -17,13 +17,7 @@ const defaultImage = await getImage({
   height: 512,
 });
 
-const {
-  title = '',
-  description = '',
-  image = defaultImage,
-  noindex = false,
-  nofollow = false,
-} = Astro.props;
+const { title = '', description = '', image = defaultImage, noindex = false, nofollow = false } = Astro.props;
 
 const seo: PropsSEO = {
   title: title,
@@ -67,8 +61,8 @@ const seo: PropsSEO = {
       {
         rel: 'sitemap',
         type: 'application/xml',
-        href: '/sitemap-index.xml'
-      }
+        href: '/sitemap-index.xml',
+      },
     ],
     meta: [
       {

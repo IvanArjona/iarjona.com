@@ -11,13 +11,17 @@ import config from '~/config';
 import { getLangFromUrl, useTranslations } from '~/i18n/utils';
 
 export async function getStaticPaths() {
-  return [{
-    params: { lang: 'en' }
-  }, {
-    params: { lang: 'es' }
-  }, {
-      params: { lang: undefined }
-  }];
+  return [
+    {
+      params: { lang: 'en' },
+    },
+    {
+      params: { lang: 'es' },
+    },
+    {
+      params: { lang: undefined },
+    },
+  ];
 }
 
 const lang = getLangFromUrl(Astro.url);

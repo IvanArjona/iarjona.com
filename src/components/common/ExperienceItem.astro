@@ -25,14 +25,7 @@ const { entry, index }: Props = Astro.props;
     data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'}
   >
     <div class="float-right m-2 p-2 rounded dark:bg-gray-200">
-      <Picture
-        src={entry.data.logo}
-        alt={entry.data.company}
-        width="64"
-        height="64"
-        sizes="64px"
-        loading="lazy"
-      />
+      <Picture src={entry.data.logo} alt={entry.data.company} width="64" height="64" sizes="64px" loading="lazy" />
     </div>
     <div class="text-sm capita text-secondary">
       <DateTime datetime={entry.data.fromDate} />
