@@ -1,7 +1,11 @@
 import type { ImageMetadata } from 'astro';
+import type { translations } from './i18n/translations';
+
+export type Lang = keyof typeof translations;
+export type TranslatedKey = keyof (typeof translations)[Lang];
 
 export interface NavigationItem {
-  name: string;
+  name: TranslatedKey;
   href: string;
 }
 

@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import astroI18next from 'astro-i18next';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import path from 'path';
@@ -14,9 +13,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   site: config.origin,
+  i18n: {
+    locales: ['es', 'en'],
+    defaultLocale: 'es',
+  },
 
   integrations: [
-    astroI18next(),
     sitemap({
       i18n: {
         defaultLocale: 'es',

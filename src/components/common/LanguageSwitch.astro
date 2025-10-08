@@ -1,29 +1,27 @@
 ---
-import { t } from 'i18next';
-import { localizeUrl } from 'astro-i18next';
-import { getCurrentLanguage, getLanguages } from '~/utils/locale';
 import { Icon } from 'astro-icon/components';
+import { getLangFromUrl, useTranslatedPath } from '~/i18n/utils';
+import { languages } from '~/i18n/config';
 
-const currentUrl = Astro.url.href;
-const currentLanguage = getCurrentLanguage();
-const supportedLanguages = await getLanguages();
+const currentLang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(currentLang);
 ---
 
 <div class="flex gap-1 items-center mr-4">
   <Icon name="tabler:language" class="h-5 w-5" />
   <ul class="flex gap-1 font-thin">
     {
-      supportedLanguages.map((language: string) => (
+      Object.entries(languages).map(([lang, label]) => (
         <li>
           <a
             rel="alternate"
-            href={localizeUrl(currentUrl, language)}
+            href={translatePath('/', lang)}
             hreflang="{language}"
             lang="{language}"
-            title={t(`locale-${language}`)}
-            class={`uppercase ${language === currentLanguage ? 'underline' : ''}`}
+            title={label}
+            class={`uppercase ${lang === currentLang ? 'underline' : ''}`}
           >
-            {language}
+            {lang}
           </a>
         </li>
       ))

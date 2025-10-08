@@ -1,6 +1,9 @@
 ---
-import { t } from 'i18next';
 import { Icon } from 'astro-icon/components';
+import { getLangFromUrl, useTranslations } from '~/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <button type="button" class="p-4" title={t('switch-theme')} aria-label={t('switch-theme')} data-toggle-color-scheme>
