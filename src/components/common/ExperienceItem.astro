@@ -21,10 +21,10 @@ const { entry, index }: Props = Astro.props;
     <div class="mx-auto font-semibold text-lg text-white"></div>
   </div>
   <article
-    class="order-1 bg-gray-100 dark:bg-opacity-10 rounded-lg shadow-xl w-10/12 lg:w-5/12 px-8 py-6"
+    class="order-1 bg-gray-100 dark:bg-gray-100/10 rounded-lg shadow-xl w-10/12 lg:w-5/12 px-8 py-6"
     data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'}
   >
-    <div class="float-right m-2 p-2 rounded dark:bg-gray-200">
+    <div class="float-right m-2 p-2 rounded-sm dark:bg-gray-200">
       <Picture src={entry.data.logo} alt={entry.data.company} width="64" height="64" sizes="64px" loading="lazy" />
     </div>
     <div class="text-sm capita text-secondary">
@@ -38,7 +38,7 @@ const { entry, index }: Props = Astro.props;
         {`${t('at')} ${entry.data.company}`}
       </span>
     </h3>
-    <p class="text-sm leading-snug tracking-wide text-opacity-100">
+    <p class="text-sm leading-snug tracking-wide">
       {entry.body}
     </p>
     <a href={entry.data.website} class="mt-2 mr-3 text-sm float-right text-secondary">

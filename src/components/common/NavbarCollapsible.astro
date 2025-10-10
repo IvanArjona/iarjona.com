@@ -17,7 +17,7 @@ const t = useTranslations(lang);
 const { navigation }: Props = Astro.props;
 ---
 
-<nav class="fixed z-40 w-full bg-black bg-opacity-20">
+<nav class="fixed z-40 w-full bg-black/20">
   <div class="relative container mx-auto flex justify-between z-10 p-4">
     <ThemeSwitch />
     <LanguageSwitch />
@@ -26,7 +26,7 @@ const { navigation }: Props = Astro.props;
 
   <div
     id="nav"
-    class="absolute hide top-0 h-screen w-screen bg-amber-500 dark:bg-red-500 transition-opacity duration-500"
+    class="absolute hide top-0 h-screen w-screen bg-amber-500 dark:bg-red-500 duration-500"
   >
     <nav class="pt-24 p-8 h-full flex flex-col justify-between">
       <ul class="flex flex-col items-center gap-8 tall:gap-20 my-auto">

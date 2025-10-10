@@ -16,7 +16,7 @@ const { Content } = await entry.render();
   <aside class="lg:max-w-1/2 w-fit shrink">
     <a
       href={entry.data.link || entry.data.github}
-      class="block mb-4 h-60 sm:h-80 aspect-[4/3] rounded-sm border-8 border-secondary"
+      class="block mb-4 h-60 sm:h-80 aspect-[4/3] rounded-xs border-8 border-secondary"
       data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
     >
       <Image
@@ -69,7 +69,7 @@ const { Content } = await entry.render();
       {
         entry.data.tags.map((tag, tagIndex) => (
           <span
-            class="font-mono bg-accent px-3 py-1 rounded-sm flex items-center"
+            class="font-mono bg-accent px-3 py-1 rounded-xs flex items-center"
             data-aos="fade-in"
             data-aos-delay={tagIndex * 100}
             data-aos-duration="800"
