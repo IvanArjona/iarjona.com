@@ -1,0 +1,32 @@
+:root {
+  --color-primary: rgb(234 179 8);
+  --color-secondary: rgb(168 85 247);
+  --color-secondary-light: rgb(192 132 252);
+  --color-secondary-dark: rgb(126 34 206);
+  --color-secondary-darker: rgb(107 33 168);
+  --color-terciary: rgb(16 185 129);
+  --color-accent: rgb(168 85 247);
+}
+
+:root.dark {
+  --color-primary: rgb(88 28 135);
+  --color-secondary: rgb(250 204 21);
+  --color-secondary-light: rgb(253 224 71);
+  --color-secondary-dark: rgb(234 179 8);
+  --color-secondary-darker: rgb(202 138 4);
+  --color-terciary: rgb(0 0 0);
+}
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-secondary-light: var(--color-secondary-light);
+  --color-secondary-dark: var(--color-secondary-dark);
+  --color-secondary-darker: var(--color-secondary-darker);
+  --color-terciary: var(--color-terciary);
+  --color-accent: var(--color-accent);
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant short (@media (max-height: 800px));
+@custom-variant tall (@media (min-height: 800px));

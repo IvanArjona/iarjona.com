@@ -11,14 +11,12 @@ const line =
 
 <style>
   #menu-hamburguer.open span:nth-child(1) {
-    @apply rotate-45;
-    @apply translate-y-3;
+    transform: rotate(45deg) translateX(5px) translateY(0.75rem);
   }
   #menu-hamburguer.open span:nth-child(2) {
-    @apply opacity-0;
+    opacity: 0;
   }
   #menu-hamburguer.open span:nth-child(3) {
-    @apply -rotate-45;
-    @apply -translate-y-3;
+    transform: rotate(-45deg) translateX(5px) translateY(-0.75rem);
   }
 </style>
